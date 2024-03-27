@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 // import Conditions from './components/Condition';
-// import WeatherComponent from './components/Weather';
-// import ApiComponent from './components/Kincardine';
-import Home from './pages/Home';
-import Forecast from './pages/Forecast';
+import WeatherComponent from './components/Weather';
+import ApiComponent from './components/Kincardine';
+// import Home from './pages/Home';
+// import Forecast from './pages/Forecast';
 
 
 function App() {
@@ -12,12 +12,14 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <ApiComponent />
+      <WeatherComponent />
+      {/* <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
           <Route element={<Forecast />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     {/* <Conditions />
     <WeatherComponent />
     <ApiComponent /> */}
