@@ -1,0 +1,212 @@
+/*FORECAST STYLES*/
+#forecast-page body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+  #forecast-page header {
+    margin: 0px 0 10px 10px;
+    width: 100%;
+    height: 10vh;
+  }
+  
+  #forecast-page table {
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 0;
+    width: 100%;
+  }
+  
+  #forecast-page h1 {
+    color: black;
+    text-align: center;
+    justify-self: left;
+  }
+  
+  #forecast-page caption {
+    display: flex;
+    height: 10vh;
+    width: 260%;
+    margin: auto;
+    align-items: center;
+  }
+  
+  #forecast-page i {
+    background-color: blue;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    right: 0;
+  }
+  
+  #forecast-page .forecast-table {
+    top: 0;
+    padding-top: 5px;
+    table-layout: fixed;
+    padding: 1rem;
+    max-width: 100%;
+    max-height: 70%;
+  }
+  
+  #forecast-page nav {
+    right: 0;
+  }
+  
+  #forecast-page tr {
+    width: 100%;
+  }
+  
+  #forecast-page th,
+  #forecast-page td {
+    padding: 1rem;
+    justify-self: center;
+  }
+  
+  #forecast-page th {
+    text-align: left;
+    border: 1px solid rgba(128, 128, 128, 0.378);
+  }
+  
+  #forecast-page th > i {
+    font-size: 1rem;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+  }
+  
+  #forecast-page th h4 {
+    text-align: center;
+    width: 100%;
+  }
+  
+  #forecast-page th span {
+    float: right;
+    width: 30%;
+    display: flex;
+    border-radius: 0;
+    margin: 1;
+    font-size: 0.8;
+    flex-wrap: wrap;
+    flex-direction: row;
+    color: red;
+    text-align: center;
+  }
+  
+  /* CSS for the Forecast page */
+  #forecast-page tr:nth-child(3) > th:nth-child(3) > span,
+  #forecast-page tr:nth-child(3) > th:nth-child(4) > span,
+  #forecast-page tr:nth-child(5) > th:nth-child(2) > span,
+  #forecast-page tr:nth-child(8) > th:nth-child(2) > span,
+  #forecast-page tr:nth-child(7) > th:nth-child(3) > span,
+  #forecast-page tr:nth-child(8) > th:nth-child(3) > span,
+  #forecast-page tr:nth-child(6) > th:nth-child(4) > span,
+  #forecast-page tr:nth-child(6) > th:nth-child(4) > span,
+  #forecast-page tr:nth-child(6) > th:nth-child(4) > span,
+  #forecast-page tr:nth-child(6) > th:nth-child(5) > span:nth-child(4),
+  #forecast-page tr:nth-child(7) > th:nth-child(2) > span:nth-child(4) {
+    background-color: #fbd858;
+  }
+  
+  #forecast-page tr:nth-child(2) > th:nth-child(2) > span:nth-child(3),
+  #forecast-page tr:nth-child(2) > th:nth-child(2) > span:nth-child(4),
+  #forecast-page tr:nth-child(2) > th:nth-child(3) > span:nth-child(3),
+  #forecast-page tr:nth-child(2) > th:nth-child(3) > span:nth-child(4),
+  #forecast-page tr:nth-child(2) > th:nth-child(4) > span:nth-child(3),
+  #forecast-page tr:nth-child(2) > th:nth-child(4) > span:nth-child(4),
+  #forecast-page tr:nth-child(2) > th:nth-child(5) > span:nth-child(3),
+  #forecast-page tr:nth-child(2) > th:nth-child(5) > span:nth-child(4),
+  #forecast-page tr:nth-child(9) > th:nth-child(2) > span:nth-child(3),
+  #forecast-page tr:nth-child(9) > th:nth-child(2) > span:nth-child(4),
+  #forecast-page tr:nth-child(9) > th:nth-child(3) > span:nth-child(3),
+  #forecast-page tr:nth-child(9) > th:nth-child(3) > span:nth-child(4),
+  #forecast-page tr:nth-child(9) > th:nth-child(4) > span:nth-child(3),
+  #forecast-page tr:nth-child(9) > th:nth-child(4) > span:nth-child(4),
+  #forecast-page tr:nth-child(9) > th:nth-child(5) > span:nth-child(3),
+  #forecast-page tr:nth-child(9) > th:nth-child(5) > span:nth-child(4),
+  #forecast-page tr:nth-child(3) > th:nth-child(5) > span:nth-child(4),
+  #forecast-page tr:nth-child(4) > th:nth-child(2) > span:nth-child(2),
+  #forecast-page tr:nth-child(4) > th:nth-child(2) > span:nth-child(3),
+  #forecast-page tr:nth-child(4) > th:nth-child(2) > span:nth-child(4),
+  #forecast-page tr:nth-child(4) > th:nth-child(5) > span:nth-child(3),
+  #forecast-page tr:nth-child(5) > th:nth-child(3) > span:nth-child(2),
+  #forecast-page tr:nth-child(5) > th:nth-child(3) > span:nth-child(3),
+  #forecast-page tr:nth-child(5) > th:nth-child(3) > span:nth-child(4),
+  #forecast-page tr:nth-child(5) > th:nth-child(4) > span:nth-child(2),
+  #forecast-page tr:nth-child(5) > th:nth-child(4) > span:nth-child(3),
+  #forecast-page tr:nth-child(5) > th:nth-child(4) > span:nth-child(4),
+  #forecast-page tr:nth-child(5) > th:nth-child(5) > span:nth-child(2),
+  #forecast-page tr:nth-child(5) > th:nth-child(5) > span:nth-child(3),
+  #forecast-page tr:nth-child(5) > th:nth-child(5) > span:nth-child(4),
+  #forecast-page tr:nth-child(6) > th:nth-child(2) > span:nth-child(2),
+  #forecast-page tr:nth-child(6) > th:nth-child(2) > span:nth-child(3),
+  #forecast-page tr:nth-child(6) > th:nth-child(2) > span:nth-child(4),
+  #forecast-page tr:nth-child(6) > th:nth-child(3) > span:nth-child(2),
+  #forecast-page tr:nth-child(6) > th:nth-child(3) > span:nth-child(3),
+  #forecast-page tr:nth-child(6) > th:nth-child(3) > span:nth-child(4),
+  #forecast-page tr:nth-child(6) > th:nth-child(5) > span:nth-child(2),
+  #forecast-page tr:nth-child(6) > th:nth-child(5) > span:nth-child(3),
+  #forecast-page tr:nth-child(7) > th:nth-child(2) > span:nth-child(2),
+  #forecast-page tr:nth-child(7) > th:nth-child(2) > span:nth-child(3),
+  #forecast-page tr:nth-child(7) > th:nth-child(4) > span:nth-child(4),
+  #forecast-page tr:nth-child(7) > th:nth-child(4) > span:nth-child(3),
+  #forecast-page tr:nth-child(8) > th:nth-child(5) > span:nth-child(2),
+  #forecast-page tr:nth-child(8) > th:nth-child(5) > span:nth-child(3),
+  #forecast-page tr:nth-child(8) > th:nth-child(5) > span:nth-child(4) {
+    background-color: #47d49a;
+  }
+  
+  #forecast-page tr:nth-child(2) > th:nth-child(5) > span:nth-child(4) {
+    background-color: #47d49a;
+  }
+  
+  #forecast-page tr:nth-child(2) > th:nth-child(2) > span:nth-child(2),
+  #forecast-page tr:nth-child(2) > th:nth-child(3) > span:nth-child(2),
+  #forecast-page tr:nth-child(2) > th:nth-child(4) > span:nth-child(2),
+  #forecast-page tr:nth-child(2) > th:nth-child(5) > span:nth-child(2),
+  #forecast-page tr:nth-child(9) > th:nth-child(2) > span:nth-child(2),
+  #forecast-page tr:nth-child(9) > th:nth-child(3) > span:nth-child(2),
+  #forecast-page tr:nth-child(9) > th:nth-child(4) > span:nth-child(2),
+  #forecast-page tr:nth-child(9) > th:nth-child(5) > span:nth-child(2),
+  #forecast-page tr:nth-child(3) > th:nth-child(2) > span:nth-child(3),
+  #forecast-page tr:nth-child(3) > th:nth-child(2) > span:nth-child(2),
+  #forecast-page tr:nth-child(3) > th:nth-child(5) > span:nth-child(3),
+  #forecast-page tr:nth-child(3) > th:nth-child(5) > span:nth-child(2),
+  #forecast-page tr:nth-child(4) > th:nth-child(3) > span:nth-child(4),
+  #forecast-page tr:nth-child(4) > th:nth-child(3) > span:nth-child(2),
+  #forecast-page tr:nth-child(4) > th:nth-child(4) > span:nth-child(3),
+  #forecast-page tr:nth-child(4) > th:nth-child(4) > span:nth-child(4),
+  #forecast-page tr:nth-child(4) > th:nth-child(5) > span:nth-child(2),
+  #forecast-page tr:nth-child(4) > th:nth-child(5) > span:nth-child(4),
+  #forecast-page tr:nth-child(7) > th:nth-child(4) > span:nth-child(2),
+  #forecast-page tr:nth-child(7) > th:nth-child(5) > span:nth-child(3),
+  #forecast-page tr:nth-child(7) > th:nth-child(5) > span:nth-child(4),
+  #forecast-page tr:nth-child(8) > th:nth-child(4) > span:nth-child(3),
+  #forecast-page tr:nth-child(8) > th:nth-child(4) > span:nth-child(4) {
+    background-color: #fbd858;
+  }
+  
+  #forecast-page tr:nth-child(3) > th:nth-child(2) > span:nth-child(4),
+  #forecast-page tr:nth-child(4) > th:nth-child(3) > span:nth-child(3),
+  #forecast-page tr:nth-child(4) > th:nth-child(4) > span:nth-child(2),
+  #forecast-page tr:nth-child(7) > th:nth-child(5) > span:nth-child(2),
+  #forecast-page tr:nth-child(8) > th:nth-child(4) > span:nth-child(2) {
+    background-color: #f26322;
+  }
+
+  /* Media Queries for Mobile Devices */
+
+@media (max-width: 768px) {
+  #forecast-page table {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  #forecast-page th,
+  #forecast-page td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  #forecast-page th span {
+    font-size: 0.6rem;
+  }
+}
