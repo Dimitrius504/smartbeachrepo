@@ -1,0 +1,300 @@
+@font-face {
+  font-family: "Gilroy-Black";
+  src: url("./assets/fonts/Gilroy-Black.ttf");
+}
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+header {
+  margin: 0px 0 10px 10px;
+  width: 100%;
+  height: 10vh;
+}
+
+table {
+  background-color: white;
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 0;
+  width: 100%;
+}
+
+h1 {
+    color: black;
+  text-align: center;
+  justify-self: left;
+}
+
+caption {
+  display: flex;
+  height: 10vh;
+  width: 260%;
+  margin: auto;
+  align-items: center;
+}
+
+aside > i{
+  background-color: blue;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  right: 0;
+}
+
+.forecast-table {
+  top: 0;
+  padding-top: 5px;
+  table-layout: fixed;
+  padding: 1rem;
+  max-width: 100%;
+  max-height: 70%;
+}
+
+nav {
+  right: 0;
+}
+
+tr {
+  width: 100%;
+}
+
+th,
+td {
+  padding: 1rem;
+  justify-self: center;
+}
+
+th {
+  text-align: left;
+  border: 1px solid rgba(128, 128, 128, 0.378);
+}
+
+th > i {
+  font-size: 1rem;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+position: relative;
+left: 50%;
+}
+
+th h4 {
+  text-align: center;
+  width: 100%;
+}
+
+th span {
+  float: right;
+  width: 30%;
+  display: flex;
+  border-radius: 0;
+  margin: 1;
+  font-size: 0.8;
+  flex-wrap: wrap;
+  flex-direction: row;
+  color: red;
+  text-align: center;
+}
+
+tr:nth-child(3) > th:nth-child(3) > span,
+tr:nth-child(3) > th:nth-child(4) > span,
+tr:nth-child(5) > th:nth-child(2) > span,
+tr:nth-child(8) > th:nth-child(2) > span,
+tr:nth-child(7) > th:nth-child(3) > span,
+tr:nth-child(8) > th:nth-child(3) > span,
+tr:nth-child(6) > th:nth-child(4) > span,
+tr:nth-child(6) > th:nth-child(4) > span,
+tr:nth-child(6) > th:nth-child(4) > span,
+tr:nth-child(6) > th:nth-child(5) > span:nth-child(4),
+tr:nth-child(7) > th:nth-child(2) > span:nth-child(4) {
+  background-color: #fbd858;
+}
+
+tr:nth-child(2) > th:nth-child(2) > span:nth-child(3),
+tr:nth-child(2) > th:nth-child(2) > span:nth-child(4),
+tr:nth-child(2) > th:nth-child(3) > span:nth-child(3),
+tr:nth-child(2) > th:nth-child(3) > span:nth-child(4),
+tr:nth-child(2) > th:nth-child(4) > span:nth-child(3),
+tr:nth-child(2) > th:nth-child(4) > span:nth-child(4),
+tr:nth-child(2) > th:nth-child(5) > span:nth-child(3),
+tr:nth-child(2)
+  > th:nth-child(5)
+  > span:nth-child(4)
+  tr:nth-child(9)
+  > th:nth-child(2)
+  > span:nth-child(3),
+tr:nth-child(9) > th:nth-child(2) > span:nth-child(3),
+tr:nth-child(9) > th:nth-child(2) > span:nth-child(4),
+tr:nth-child(9) > th:nth-child(3) > span:nth-child(3),
+tr:nth-child(9) > th:nth-child(3) > span:nth-child(4),
+tr:nth-child(9) > th:nth-child(4) > span:nth-child(3),
+tr:nth-child(9) > th:nth-child(4) > span:nth-child(4),
+tr:nth-child(9) > th:nth-child(5) > span:nth-child(3),
+tr:nth-child(9) > th:nth-child(5) > span:nth-child(4),
+tr:nth-child(3) > th:nth-child(5) > span:nth-child(4),
+tr:nth-child(4) > th:nth-child(2) > span:nth-child(2),
+tr:nth-child(4) > th:nth-child(2) > span:nth-child(3),
+tr:nth-child(4) > th:nth-child(2) > span:nth-child(4),
+tr:nth-child(4) > th:nth-child(5) > span:nth-child(3),
+tr:nth-child(5) > th:nth-child(3) > span:nth-child(2),
+tr:nth-child(5) > th:nth-child(3) > span:nth-child(3),
+tr:nth-child(5) > th:nth-child(3) > span:nth-child(4),
+tr:nth-child(5) > th:nth-child(4) > span:nth-child(2),
+tr:nth-child(5) > th:nth-child(4) > span:nth-child(3),
+tr:nth-child(5) > th:nth-child(4) > span:nth-child(4),
+tr:nth-child(5) > th:nth-child(5) > span:nth-child(2),
+tr:nth-child(5) > th:nth-child(5) > span:nth-child(3),
+tr:nth-child(5) > th:nth-child(5) > span:nth-child(4),
+tr:nth-child(6) > th:nth-child(2) > span:nth-child(2),
+tr:nth-child(6) > th:nth-child(2) > span:nth-child(3),
+tr:nth-child(6) > th:nth-child(2) > span:nth-child(4),
+tr:nth-child(6) > th:nth-child(3) > span:nth-child(2),
+tr:nth-child(6) > th:nth-child(3) > span:nth-child(3),
+tr:nth-child(6) > th:nth-child(3) > span:nth-child(4),
+tr:nth-child(6) > th:nth-child(5) > span:nth-child(2),
+tr:nth-child(6) > th:nth-child(5) > span:nth-child(3),
+tr:nth-child(7) > th:nth-child(2) > span:nth-child(2),
+tr:nth-child(7) > th:nth-child(2) > span:nth-child(3),
+tr:nth-child(7) > th:nth-child(4) > span:nth-child(4),
+tr:nth-child(7) > th:nth-child(4) > span:nth-child(3),
+tr:nth-child(8) > th:nth-child(5) > span:nth-child(2),
+tr:nth-child(8) > th:nth-child(5) > span:nth-child(3),
+tr:nth-child(8) > th:nth-child(5) > span:nth-child(4) {
+  background-color: #47d49a;
+}
+
+tr:nth-child(2) > th:nth-child(5) > span:nth-child(4) {
+  background-color: #47d49a;
+}
+
+tr:nth-child(2) > th:nth-child(2) > span:nth-child(2),
+tr:nth-child(2) > th:nth-child(3) > span:nth-child(2),
+tr:nth-child(2) > th:nth-child(4) > span:nth-child(2),
+tr:nth-child(2) > th:nth-child(5) > span:nth-child(2),
+tr:nth-child(9) > th:nth-child(2) > span:nth-child(2),
+tr:nth-child(9) > th:nth-child(3) > span:nth-child(2),
+tr:nth-child(9) > th:nth-child(4) > span:nth-child(2),
+tr:nth-child(9) > th:nth-child(5) > span:nth-child(2),
+tr:nth-child(3) > th:nth-child(2) > span:nth-child(3),
+tr:nth-child(3) > th:nth-child(2) > span:nth-child(2),
+tr:nth-child(3) > th:nth-child(5) > span:nth-child(3),
+tr:nth-child(3) > th:nth-child(5) > span:nth-child(2),
+tr:nth-child(4) > th:nth-child(3) > span:nth-child(4),
+tr:nth-child(4) > th:nth-child(3) > span:nth-child(2),
+tr:nth-child(4) > th:nth-child(4) > span:nth-child(3),
+tr:nth-child(4) > th:nth-child(4) > span:nth-child(4),
+tr:nth-child(4) > th:nth-child(5) > span:nth-child(2),
+tr:nth-child(4) > th:nth-child(5) > span:nth-child(4),
+tr:nth-child(7) > th:nth-child(4) > span:nth-child(2),
+tr:nth-child(7) > th:nth-child(5) > span:nth-child(3),
+tr:nth-child(7) > th:nth-child(5) > span:nth-child(4),
+tr:nth-child(8) > th:nth-child(4) > span:nth-child(3),
+tr:nth-child(8) > th:nth-child(4) > span:nth-child(4) {
+  background-color: #fbd858;
+}
+
+tr:nth-child(3) > th:nth-child(2) > span:nth-child(4),
+tr:nth-child(4) > th:nth-child(3) > span:nth-child(3),
+tr:nth-child(4) > th:nth-child(4) > span:nth-child(2),
+tr:nth-child(7) > th:nth-child(5) > span:nth-child(2),
+tr:nth-child(8) > th:nth-child(4) > span:nth-child(2) {
+  background-color: #f26322;
+}
+.green-bar, .headText, .mobile, #mobile {
+  display: none;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .days {
+    display: flex;
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center; /* Center items vertically */
+    text-align: center;
+  }
+  .hidden {
+    display: none;
+  }
+  .green-bar, .headText {
+    display:flex;
+  }
+  
+  .days th:not(.empty) {
+    margin: 0px 10px 50px 20px; /* Adjust the spacing between cards */
+    padding: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    box-shadow: -1px 5px 3px rgb(112, 112, 112);
+  }
+  .green-bar {
+position: relative;
+top: 45px;
+width: 170%;
+background-color: #47d49a;
+height: 7px;
+align-content: center;
+  }
+  table, th{
+    border: none;
+  }
+.forecast-table {
+  table-layout: auto;
+  margin: 0px;
+}
+  .wind, .surface, .dpd, .mwd, .pressure, .atmp, .wtmp, .dewp { 
+display: none;
+  }
+  .tableData {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+  }
+  th {
+    padding: 0px;
+  }
+
+.time {
+  margin-right: 80px;
+  margin-left: 25px ;
+}
+.timed {
+  margin-right: 85px;
+  margin-left: 25px ;
+}
+.status, .windM, .pressureM, .weather {
+  margin-right: 70px;
+  margin-bottom: 30px;
+}
+ .windd {
+  margin-right: 95px;
+  margin-bottom: 25px;
+}
+.statusd {
+  margin-right:90px;
+  color: #47d49a;
+  margin-bottom: 25px;
+}
+.pressured {
+  margin-right: 125px;
+  margin-bottom: 25px;
+}
+.weatherd {
+  margin-right: 75px;
+  margin-bottom: 25px;
+}
+tr {
+  display: flex;
+  justify-content: center;
+}
+th > h2 {
+  margin-bottom: 25px;
+ position: relative;
+right: 275px;
+font-family: "Gilroy-Black";
+  }
+}
+
+

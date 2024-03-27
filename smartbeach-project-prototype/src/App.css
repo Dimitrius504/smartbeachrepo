@@ -1,38 +1,502 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Gilroy-Black";
+  src: url("../src/assets/fonts/Gilroy-Black.ttf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy-Black";
+  background-image: url("../src/assets/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  font-family: "Gilroy-Black";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
+  height: 10vh;
+  width: 90%;
+  margin: auto;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.hamburger {
+  content: none;
+}
+
+#hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  max-width: 15vh;
+}
+
+.logo {
+  font-weight: 400;
+  margin: 4px;
+  
+}
+
+.logo-container,
+.nav-links,
+.cart {
+  display: flex;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+nav {
+  flex: 2;
+}
+
+.nav-links {
+  justify-content: space-around;
+  list-style: none;
+}
+
+.nav-link {
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.presentation {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  min-height: 80vh;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.cover img {
+  width: 50vw;
+  height: 60vh;
+  border-radius: 5px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.introduction {
+  color: white;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cover {
+  top: 5vh;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cover-text {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: baseline;
+  bottom: 0;
+  padding-left: 2%;
+  color: antiquewhite;
+}
+
+.intro-text {
+  margin-top: 18vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 20vw;
+}
+
+.intro-text h1 {
+  font-size: 2.5em;
+  font-weight: 500;
+}
+
+.intro-text p {
+  margin-top: 5px;
+  font-size: 2.2em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cta {
+  padding: 25px 0 0 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cta-select {
+  border-radius: 15px;
+  border: 4px solid #b2cdebff;
+  background: transparent;
+  color: rgb(113, 171, 237);
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  align-items: center;
+  font-size: 1.5em;
+
+  -webkit-box-shadow: 0 0 5px #b2cdebff;
+  -moz-box-shadow: 0 0 5px #b2cdebff;
+  box-shadow: 0 0 5px #b2cdebff;
+}
+
+.cta-select h1 {
+  font-size: 2rem;
+}
+
+.hamburger-menu {
+  display: none;
+  margin-left: auto;
+  right: 5%;
+  height: 30px;
+  width: 60px;
+  position: absolute;
+  transform: rotate(90deg);
+}
+
+span {
+  width: 100%;
+  font-size: 1.7rem;
+  font-weight: 100;
+  height: 10px;
+  background-color: black;
+  border-radius: 10px;
+  top: 50%;
+  left: 20%;
+  transition: all 0.3s ease-in;
+}
+
+.hamburger-menu span:nth-child(1) {
+  top: 25%;
+}
+
+.hamburger-menu span:nth-child(3) {
+  top: 5%;
+}
+
+#wind-speed {
+  display: none;
+}
+
+/* Forecast Page */
+
+.forecast-table {
+  display: flex;
+  margin: auto;
+  padding: 2%;
+  height: 80vh;
+  width: 80vw;
+}
+
+@media (max-width: 1270px) {
+  .intro-text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    margin-top: 15vh;
+    margin-right: 1px;
+    padding-right: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .intro-text h1 {
+    font-size: 2em;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .intro-text p {
+    text-align: right;
+    margin-top: 5px;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+  }
+
+  .introduction > div > h1 > img {
+    width: 40%;
+  }
+
+  .cover > h1 {
+    font-size: 1.7rem;
+  }
+
+  .cta-select h1 {
+    font-size: 2rem;
   }
 }
+
+@media (max-width: 1050px) {
+
+  .intro-text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    margin-top: 15vh;
+  }
+
+  .intro-text h1 {
+    font-size: 1.7em;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .intro-text p {
+    text-align: right;
+    margin-top: 5px;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+  }
+
+  .cta-select h1 {
+    font-size: 1.5rem;
+  }
+
+  #wind-speed {
+    display: none;
+  }
+
+}
+
+@media (min-width: 350px) and (max-width: 800px) {
+  body {
+    background-image: none;
+  }
+
+  .presentation {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .cover {
+    border-radius: 0;
+    width: 100vw;
+    top: 10vh;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .cover img {
+    border-radius: 0;
+    width: 150vw;
+    height: 40vh;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+  }
+  .cover-text {
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+    color: antiquewhite;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.477);
+  }
+  header {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+  }
+
+  .cta {
+    
+    justify-content: space-around;
+    padding: 38vh 2vw 0 2vw;
+    position: fixed;
+    margin: 0 0 0 0;
+    left: 0;
+  }
+
+  .cta-select h1 {
+    font-size: 3rem;
+    color: #47d49a;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-left: 10%;
+    border-left: 10px solid #47d49a;
+    text-align: left;
+    justify-content: left;
+    align-items: center;
+    height: 80%;
+    margin: auto;
+    margin-left: 3%;
+  }
+  
+  .cta-select {
+    border: 1px solid rgba(0, 0, 0, 0.489);
+    background: transparent;
+    color: rgba(0, 0, 0, 0.399);
+    width: 95vw;
+    height: 20vh;
+    cursor: pointer;
+    text-align: left;
+    align-items: center;
+    font-size: 1.5em;
+  
+    -moz-box-shadow: 0px 0px 4px 1px grey;
+    -webkit-box-shadow: 0px 0px 4px 1px grey;
+    box-shadow: 0px 0px 4px 1px grey;
+  }
+  
+  .wind-speed-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #wind-speed {
+    display: block;
+    padding: 61vh 2vw 0 2vw;
+    text-align: left;
+  }
+
+  #wind-speed-select {
+    display: inline;
+    align-items: center;
+    margin: 0;
+    padding: 0 5% 5% 5%;
+  }
+
+  #wind-speed-select h1 {
+    padding: 0;
+    margin: 0 auto;
+     font-size: 3rem;
+    color: #000000;
+    border-left: none;
+    height: 50%;
+  }
+
+  #wind-speed-select > h2 {
+    color: #000000;
+    font-size: 1rem;
+  }
+
+  
+  .nav-link {
+    display: none;
+  }
+
+  .hamburger-menu {
+    z-index: 9;
+    display: block;
+  }
+
+  .nav-link {
+    color: rgb(0, 0, 0);
+  }
+
+  .introduction {
+    margin: 0;
+  
+  }
+
+  .cover > h1 {
+    font-size: 1.5rem;
+  }
+}
+/* Styling for Live page */
+
+/* Styling for Live page */
+
+/* Main section styling */
+.main {
+  padding: 20px;
+}
+
+/* Presentation section styling */
+.presentationLive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Model time paragraph styling */
+.modelTime {
+  font-size: 25px;
+  color: #555;
+}
+
+/* Today's Prediction section styling */
+.TP {
+  margin-top: 20px;
+}
+
+/* Heading styling */
+.bold {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Image styling */
+.TP img {
+  max-width: 100%; /* Ensure the image does not exceed the container width */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px;
+  margin-left: auto; /* Center the image horizontally */
+  margin-right: auto; /* Center the image horizontally */
+}
+
+/* Text paragraph styling */
+.TP p {
+  font-size: 20px;
+  padding: 15px; /* Reduce padding for better readability on small screens */
+  line-height: 1.5;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Media query for smaller devices */
+@media (max-width: 600px) {
+  /* Adjustments for smaller screens */
+  .modelTime {
+    font-size: 20px;
+  }
+  .bold {
+    font-size: 20px;
+  }
+  .TP p {
+    font-size: 16px; /* Decrease font size for better readability */
+    padding: 10px; /* Reduce padding further for smaller screens */
+  }
+}
+
+
+
+
+
+
