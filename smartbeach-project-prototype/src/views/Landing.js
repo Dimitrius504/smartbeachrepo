@@ -2,6 +2,7 @@ import React from "react";
 import sunny from "../assets/images/sunny.png";
 import live from "../assets/images/live.jpg"
 
+
 function Landing() {
     return (
       <main>
@@ -23,7 +24,7 @@ function Landing() {
         <div className="cover">
         <img src={live} alt="Live Footage" />
 
-          <h1 className="cover-text">LIVE Smart Beach, ON</h1>
+          <h1 className="cover-text">LIVE Station Beach, Kincardine ON</h1>
         </div>
       </section>
       </main>

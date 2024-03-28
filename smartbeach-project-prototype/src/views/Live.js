@@ -1,6 +1,7 @@
 import React from "react";
 import prediction from '../assets/images/prediction.png';
 
+
 function Live() {
     return (
         <main>
@@ -18,6 +19,7 @@ function Live() {
             hydrated. Don't forget to apply sunscreen if you'll be out in the
             sun for awhile. Enjoy your day spent by the water!
           </p>
+          {/* Add saftey information link :https://www.kincardine.ca/en/play-and-explore/beaches.aspx */}
         </section>
       </section>
     </main>

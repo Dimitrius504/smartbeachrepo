@@ -19,7 +19,7 @@ function Header() {
         <span></span>
         <span></span>
       </div>
-      <ul className={`nav-links ${isNavOpen ? 'open' : ''}`}>
+      <ul className={`nav-links`}>
         <li><a className="nav-link" href="/landing">Home</a></li>
         <li><a className="nav-link" href="forecast">Forecast</a></li>
         <li><a className="nav-link" href="/live">Live</a></li>

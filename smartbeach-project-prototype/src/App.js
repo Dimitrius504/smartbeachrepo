@@ -4,6 +4,7 @@ import './Forecast.css';
 //import WeatherComponent from './components/Weather';
 //import ApiComponent from './components/Kincardine';
 import Header from './views/shared/Header';
+// import Footer from './views/shared/Footer';
 import Landing from './views/Landing';
 import Forecast from './views/Forecast';
 import Live from './views/Live'

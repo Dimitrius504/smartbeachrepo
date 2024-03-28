@@ -7,11 +7,11 @@ body {
   overflow-y: scroll;
 }
 
-header {
+/* header {
   margin: 0px 0 10px 10px;
   width: 100%;
   height: 10vh;
-}
+} */
 
 table {
   background-color: white;
@@ -51,9 +51,9 @@ aside > i{
   max-height: 70%;
 }
 
-nav {
+/* nav {
   right: 0;
-}
+} */
 
 tr {
   width: 100%;
