@@ -1,5 +1,7 @@
 import './App.css';
 import './Forecast.css';
+import './Live.css';
+import './Landing.css';
 //import Conditions from './components/Condition';
 //import WeatherComponent from './components/Weather';
 //import ApiComponent from './components/Kincardine';
