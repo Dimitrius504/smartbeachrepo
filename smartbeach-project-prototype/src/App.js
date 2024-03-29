@@ -22,7 +22,7 @@ function App() {
     {/* <ApiComponent /> */}
     <BrowserRouter>
           <Routes>
-            <Route path="/landing" element={<Landing/>}/>
+            <Route path="/" element={<Landing/>}/>
             <Route path="/forecast" element={<div id="forecast-page"><Forecast/></div>}/>
             <Route path="/live" element={<Live/>}/>
           </Routes>

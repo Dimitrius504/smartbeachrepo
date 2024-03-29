@@ -72,9 +72,9 @@ function Landing() {
         <div className="introduction">
           <div className="intro-text">
             <h1 className="landing">
-              {temperature} °C <img src={weatherIcon} alt="weatherIcon" />
+              {temperature}°c     <img src={weatherIcon} alt="weatherIcon" id="weatherIcon"/>
             </h1>
-            <h2>{description}</h2>
+            <h2><em>{description}</em></h2>
             <div className="cta">
               <Link to="/forecast">
                 <button className="cta-select">
