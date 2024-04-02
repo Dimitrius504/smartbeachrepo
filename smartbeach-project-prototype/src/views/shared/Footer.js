@@ -10,7 +10,7 @@ function Footer() {
                 <ul className="footer-nav">
                     <li><a href="/forecast">Forecast</a></li>
                     <li><a href="/live">Today's Prediction</a></li>
-                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/live#about-us">About Us</a></li>
                 </ul>
                 <ul className="SNS-icon">
                     <li><button><img src={facebook} alt="Facebook-Logo" id="facebook" /></button></li>

@@ -9,7 +9,7 @@ function Live() {
           <h1 className="bold">Today's Prediction</h1>
           <p className="modelTime">Model run: Jan 01 8am-10(Jan01 18 UTC)</p>
           <img src={prediction} alt="prediction"/>
-          <h1>About us</h1>
+          <h1 id="about-us">About us</h1>
           <p>
             The perfect combination of gentle winds and clear skies creates
             ideal conditions for surfing and swimming. Take advantage of the

@@ -467,6 +467,31 @@ nav {
   .cover > h1 {
     font-size: 1.5rem;
   }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-line-one {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; 
+  }
+  
+  .footer-nav,
+  .SNS-icon {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .SNS-icon li,
+  .footer-nav li {
+    display: inline-block;
+    margin-right: 10px; 
+  }
+  
 }
 /* Styling for Live page */
 
@@ -520,11 +545,7 @@ nav {
   font-weight: bold;
   color: #333;
 }
-.footer-nav, .SNS-icon {
-  display: flex;
-  list-style: none;
 
-}
 /* Media query for smaller devices */
 @media (max-width: 600px) {
   /* Adjustments for smaller screens */
@@ -538,20 +559,36 @@ nav {
     font-size: 16px; 
     padding: 10px; 
   }
-}
 
-
-
-.SNS-icon {
-  float: right;
-  margin-left: 500px;
-}
-.SNS-icon li {
-  margin-right: 10px;
-}
-.SNS-icon img {
-  height: 30px;
-}
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-line-one {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+  
+  .footer-nav,
+  .SNS-icon {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .SNS-icon li,
+  .footer-nav li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .SNS-icon img {
+    height: 30px;
+  }
+  
 #content-container, #forecast-page{
  margin-bottom: 80px; 
 }
@@ -568,15 +605,52 @@ id #forecast-page {
   flex: 1;
 }
 
-.footer-line-one{
+}
+.footer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.footer p {
-  text-align: center;
 
+.footer-line-one {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 20px; /* Add space under footer line one */
 }
-.footer-nav li a{
-  margin-right: 30px;
-  text-decoration: none;
-  color: black;
+
+.footer-nav,
+.SNS-icon {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  display: inline-block;
+  margin-right: 20px; 
+}
+
+.footer-nav li a {
+  text-decoration: none; 
+  color: black; 
+}
+.SNS-icon {
+  display: flex;
+  align-items: center;
+}
+
+.SNS-icon li {
+  margin-right: 10px;
+}
+
+.SNS-icon img {
+  height: 30px;
+}
+
+@media (min-width: 768px) {
+  .footer-nav {
+    display: flex;
+    align-items: center;
+  }
 }
