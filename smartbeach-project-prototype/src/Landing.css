@@ -1,0 +1,84 @@
+ .body-bg {
+     margin: 0;
+     padding: 0;
+     background-image: url("../src/assets/images/background.png");
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center;
+ }
+
+ #presentation {
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     margin: 0 auto;
+     max-width: 1366px;
+     min-height: 100vh;
+     gap: 5rem;
+ }
+
+ .weather-conditions {
+     display: flex;
+     flex-direction: column;
+     padding-left: 400px;
+     text-align: center;
+
+ }
+
+ .weather-conditions p {
+     font-weight: bold;
+     font-size: 2rem;
+     text-align: center;
+
+ }
+
+ .weather-conditions a {
+     display: block;
+     background-color: lightskyblue;
+     color: white;
+     padding: 1rem 1.25rem;
+     border-radius: 2rem;
+     font-size: 20px;
+     text-decoration: none;
+     width: 150px;
+     text-align: center;
+     margin: auto;
+
+
+
+     -webkit-box-shadow: 0 0 5px #b2cdebff;
+     -moz-box-shadow: 0 0 5px #b2cdebff;
+     box-shadow: 0 0 5px #b2cdebff;
+ }
+
+ .image-container {
+     max-width: 600px;
+     height: auto;
+ }
+
+ .image-container iframe {
+     border-radius: 10px;
+
+ }
+
+
+ @media screen and (max-width: 1100px) {
+     #presentation {
+         flex-direction: column;
+         justify-content: center;
+     }
+
+     #presentation>div {
+         flex: 0;
+     }
+
+     .weather-conditions {
+         padding-right: 450px;
+     }
+
+     .image-container iframe {
+         max-width: 100%;
+         height: 394px;
+     }
+ }
