@@ -491,7 +491,10 @@ nav {
     display: inline-block;
     margin-right: 10px; 
   }
-  
+  .footer-nav {
+    display: flex;
+    align-items: center;
+  } 
 }
 /* Styling for Live page */
 
@@ -616,7 +619,7 @@ id #forecast-page {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin-bottom: 20px; /* Add space under footer line one */
+  margin-bottom: 20px; 
 }
 
 .footer-nav,
@@ -645,12 +648,9 @@ id #forecast-page {
 }
 
 .SNS-icon img {
-  height: 30px;
+  height: 40px;
 }
+.footer  {
 
-@media (min-width: 768px) {
-  .footer-nav {
-    display: flex;
-    align-items: center;
-  }
+  font-size: 23px;
 }

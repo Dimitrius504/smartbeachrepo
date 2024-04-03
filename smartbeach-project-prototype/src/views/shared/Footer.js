@@ -13,9 +13,9 @@ function Footer() {
                     <li><a href="/live#about-us">About Us</a></li>
                 </ul>
                 <ul className="SNS-icon">
-                    <li><button><img src={facebook} alt="Facebook-Logo" id="facebook" /></button></li>
-                    <li><button><img src={instagram} alt="Instagram-logo" id="instagram" /></button></li>
-                    <li><button><img src={twitterX} alt="TwitterX-logo" id="twitter" /></button></li>
+                    <li><img src={facebook} alt="Facebook-Logo" id="facebook" /></li>
+                    <li><img src={instagram} alt="Instagram-logo" id="instagram" /></li>
+                    <li><img src={twitterX} alt="TwitterX-logo" id="twitter" /></li>
                 </ul>
             </div>
             <p>2024 by Deep Sea Coders</p>
