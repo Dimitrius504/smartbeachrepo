@@ -467,34 +467,7 @@ nav {
   .cover > h1 {
     font-size: 1.5rem;
   }
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .footer-line-one {
-    display: flex;
-    justify-content: space-between;
-    width: 80%; 
-  }
-  
-  .footer-nav,
-  .SNS-icon {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .SNS-icon li,
-  .footer-nav li {
-    display: inline-block;
-    margin-right: 10px; 
-  }
-  .footer-nav {
-    display: flex;
-    align-items: center;
-  } 
+
 }
 /* Styling for Live page */
 
@@ -563,42 +536,12 @@ nav {
     padding: 10px; 
   }
 
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .footer-line-one {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-  }
-  
-  .footer-nav,
-  .SNS-icon {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .SNS-icon li,
-  .footer-nav li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .SNS-icon img {
-    height: 30px;
-  }
-  
 #content-container, #forecast-page{
  margin-bottom: 80px; 
 }
-id #forecast-page {
+#forecast-page {
   margin-bottom: 80px;
 }
-
 
 .wrapper {
   flex: 1;
@@ -609,17 +552,11 @@ id #forecast-page {
 }
 
 }
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .footer-line-one {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin-bottom: 20px; 
+  margin-bottom: 20px; /* Add space under footer line one */
 }
 
 .footer-nav,
@@ -629,14 +566,13 @@ id #forecast-page {
   margin: 0;
 }
 
-.footer-nav li {
-  display: inline-block;
-  margin-right: 20px; 
-}
 
 .footer-nav li a {
-  text-decoration: none; 
+  text-decoration: none;
   color: black; 
+}
+.footer p {
+text-align: center;
 }
 .SNS-icon {
   display: flex;
@@ -646,11 +582,19 @@ id #forecast-page {
 .SNS-icon li {
   margin-right: 10px;
 }
-
-.SNS-icon img {
-  height: 40px;
+.footer-nav li {
+  margin-right: 10px;
 }
-.footer  {
+.SNS-icon img {
+  height: 30px;
+}
+.footer-nav {
+  margin-left: 100px;
+}
 
-  font-size: 23px;
+@media (min-width: 600px) {
+  .footer-nav {
+    display: flex;
+    align-items: center;
+  }
 }
