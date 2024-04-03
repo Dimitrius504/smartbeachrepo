@@ -458,7 +458,7 @@ span {
 /* Heading styling */
 .bold {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 25px;
   margin-bottom: 10px;
 }
 
@@ -469,6 +469,7 @@ span {
   margin-bottom: 20px;
   margin-left: auto; /* Center the image horizontally */
   margin-right: auto; /* Center the image horizontally */
+  border: 4px solid lightblue;
 }
 
 /* Text paragraph styling */
@@ -476,8 +477,8 @@ span {
   font-size: 20px;
   padding: 15px; /* Reduce padding for better readability on small screens */
   line-height: 1.5;
-  font-weight: bold;
   color: #333;
+  background-color: lightblue;
 }
 
 /* Media query for smaller devices */
