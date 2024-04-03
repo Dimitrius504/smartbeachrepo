@@ -1,27 +1,36 @@
 import React from "react";
-import prediction from '../assets/images/prediction.png';
+import beachsafety from '../assets/images/beachsafety.jpeg';
+import smartbeachgraphic from '../assets/images/smartbeachgraphic.png';
 
 function Live() {
-    return (
-        <main>
+  return (
+    <main>
       <section className="presentationLive">
+        <div className="topImagesContainer">
+          <img src={beachsafety} alt="prediction" className="sideBySideImage" />
+          <img src={smartbeachgraphic} alt="smart beach banner" className="sideBySideImage" />
+        </div>
         <section className="TP">
-          <h1 className="bold">Today's Prediction</h1>
-          <p className="modelTime">Model run: Jan 01 8am-10(Jan01 18 UTC)</p>
-          <img src={prediction} alt="prediction"/>
-          <h1>About us</h1>
-          <p>
-            The perfect combination of gentle winds and clear skies creates
-            ideal conditions for surfing and swimming. Take advantage of the
-            waves and have a wonderful time in the weather. Safety should always
-            come first, so be sure to follow any local regulations and stay
-            hydrated. Don't forget to apply sunscreen if you'll be out in the
-            sun for awhile. Enjoy your day spent by the water!
-          </p>
+          <div className="aboutContent">
+            <h1 className="bold">The Smart Beach Project</h1>
+            <div className="paragraphContainer">
+              <h2>Smart Beach Safety</h2>
+              <p>
+                Beach safety is about more than just enjoying the sun and surf—it's about protecting yourself and others while soaking up the coastal beauty. Before heading to the beach, take a moment to assess the conditions and familiarize yourself with any potential hazards. Always swim in designated areas with lifeguard supervision and pay attention to warning signs or flags indicating water conditions. Remember to stay vigilant of rip currents, which can swiftly pull swimmers away from shore, and never underestimate the power of the great lakes. By staying informed and prepared, you can enjoy a safe and enjoyable beach day for everyone.
+              </p>
+            </div>
+            <div className="paragraphContainer">
+              <h2>The Smart Beach Mission</h2>
+              <p>
+                The new Smart Beach pilot program, launched by the region’s Municipal Innovation Council and hosted at the Municipality of Kincardine’s Station Beach, will provide beachgoers with up-to-date information so they can stay safe at the beach.
+                Smart Beach uses innovative technologies to collect and analyse water and weather conditions and develop a system that will provide beachgoers with real-time information on local water conditions, including rough surf and the presence of rip currents.
+              </p>
+            </div>
+          </div>
         </section>
       </section>
     </main>
-    );
+  );
 }
 
 export default Live;

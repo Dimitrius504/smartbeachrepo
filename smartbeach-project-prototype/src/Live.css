@@ -1,57 +1,82 @@
 /* Presentation section styles */
 .presentationLive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  /* Model time paragraph styles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Container for top images */
+.topImagesContainer {
+  display: flex;
+  justify-content: space-between; 
+  margin-bottom: 20px; 
+}
+
+/* Image styles */
+.sideBySideImage {
+  height: 450px; 
+  object-fit: cover; 
+  width: auto; 
+  padding-top: 20px;
+}
+
+/* About section styles */
+.aboutContent {
+  background-color: #fffffff7;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Paragraph container styles */
+.paragraphContainer {
+  display: inline-block; 
+  width: 45%; 
+  margin-right: 5%; 
+  text-align: left;
+}
+
+/* Model time paragraph styles */
+.modelTime {
+  font-size: 25px;
+  color: #555;
+}
+
+/* Heading styles */
+.bold {
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-bottom: 50px;
+}
+
+/* Text paragraph styles */
+.TP p {
+  font-size: 20px;
+  padding: 15px; 
+  line-height: 1.5;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Media query for smaller devices */
+@media (max-width: 600px) {
   .modelTime {
-    font-size: 25px;
-    color: #555;
+      font-size: 20px;
   }
-  
-  /* Today's Prediction section styles */
-  .TP {
-    margin-top: 20px;
-  }
-  
-  /* Heading */
   .bold {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 10px;
+      font-size: 20px;
   }
-  
-  /* Image styles*/
-  .TP img {
-    max-width: 100%; 
-    height: auto; 
-    margin-bottom: 20px;
-    margin-left: auto; 
-    margin-right: auto; 
-  }
-  
-  /* Text paragraph styles */
   .TP p {
-    font-size: 20px;
-    padding: 15px; 
-    line-height: 1.5;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Media query for smaller devices */
-  @media (max-width: 600px) {
-    .modelTime {
-      font-size: 20px;
-    }
-    .bold {
-      font-size: 20px;
-    }
-    .TP p {
       font-size: 16px; 
       padding: 10px; 
-    }
   }
+  .sideBySideImage {
+      width: 100%; 
+      margin-bottom: 10px; 
+  }
+  .paragraphContainer {
+    width: 100%; 
+    margin-right: 0; 
+  }
+
+}

@@ -1,15 +1,15 @@
 import React from "react";
 import sunny from "../assets/images/sunny.png";
-import live from "../assets/images/live.jpg"
+//import live from "../assets/images/live.jpg"
 
 function Landing() {
-    return (
-      <main>
-        <section className="presentation">
+  return (
+    <main>
+      <section className="presentation">
         <div className="introduction">
           <div className="intro-text">
             <h1 className="landing"> 23 °C <img src={sunny} alt="sun" />
-</h1>
+            </h1>
             <p>Today's Beach Conditions</p>
             <div className="cta">
               <button className="cta-select"><h1>SAFE</h1></button>
@@ -21,14 +21,19 @@ function Landing() {
         </div>
 
         <div className="cover">
-        <img src={live} alt="Live Footage" />
+          <iframe
+            src="https://www.youtube.com/embed/Anpo_1-tsUs"
+            title="Drone video of Kincardine"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
 
-          <h1 className="cover-text">LIVE Smart Beach, ON</h1>
+          <h1 className="cover-text">Station Beach, ON</h1>
         </div>
       </section>
-      </main>
-    
-    );
+    </main>
+
+  );
 }
 
 export default Landing;
