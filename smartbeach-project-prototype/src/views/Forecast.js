@@ -1,132 +1,85 @@
-{/* <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beach Project</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/assets/images/sunnyclowdy.png"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/forecast-style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-      crossorigin="anonymous"
-    ></script>
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="javascript/functions.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <div class="logo-container">
-        <img src="assets/images/logobeach.png" alt="Logo Image" id="hero" />
-      </div>
-    </header> */}
+import React from "react";
+import sunny from "../assets/images/sunny.png";
+import rainy from "../assets/images/rainy.png"
+import sunnycloudy from "../assets/images/sunnyclowdy.png"
     function Forecast() {
       return(
 
 
     <main>
-      <div class="forecast-table">
-        <table>
-          <caption class="d-flex justify-content-between align-items-center">
-            <h1 class="m-0">Forecast</h1>
-            <aside>
-              <i class="bi bi-caret-left"></i>
-              <i class="bi bi-caret-right"></i>
-            </aside>
-          </caption>
-          <tr class="days">
-            <th class="hidden"></th>
-            <th>Today <h1 class="headText">0.2m</h1><span class="green-bar"></span></th>
-            <th>Tommorow<h1 class="headText">0.4m</h1><span class="green-bar"></span></th>
-            <th>Thu<h1 class="headText">0.5m</h1><span class="green-bar"></span></th>
-            <th class="hidden">Thu<h1 class="headText">0.3m</h1><span class="green-bar"></span></th>
-          </tr>
+        <section className="mobile">
+          <h1>04/02 | 6:13pm</h1>
+          <br />
+        <h2> 23 °C <img className="ratingIcon" src={sunny} alt="sun" /> </h2>
+        <h1 className="rating">Safe</h1>
+        </section>
 
-            <th class="mobile">
-              <i class="bi bi-three-dots"></i>
+        <div class="dailyForecast"><h2>Weekly Forecast</h2></div>
+        <div class="cards">
+        <div class="card1">
+        <h1 className="cardHead">Tommorows Forecast</h1>
+        <h2 class="cardTemp"> 23 °C <img className="ratingIcon" src={rainy} alt="sun" /> </h2>
+        <h1 className="rating">Safe</h1>
+        </div>
+        <div class="card2">
+          <h1 className="cardHead">Wednesdays Forecast</h1>
+          <h2 class="comingSoon"> Weekly Forecast Coming Soon!</h2>
+        </div>
+        </div>
+        <h1 className="mobile">Today</h1>
+        <table class="mobileTable">
+          <tr class="columnHeads">
+            <th><h2>Time</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Wave Height</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Water Tempeture</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Air Pressure</h2><h1 class="headText">0.5m</h1></th>
+          </tr>
+          <tr>
+            <th class="timeFont">
+              <h4>6 am</h4>
             </th>
-
-          <tr class="mobile">
-            
-            <h2>Today<i class="bi bi-chevron-compact-down"></i></h2>
-            </tr>
-          
-          <tr class="mobile">
-            <th class="time">Time</th>
-            <th class="status">Status</th>
-            <th class="windM">Wind</th>
-            <th class="pressureM">Pressure</th>
-            <th class="weather">Weather</th>
-          </tr>
-
-          <tr class="mobile">
-            <th class="timed">6am</th>
-            <th class="statusd">Safe</th>
-            <th class="windd">32</th>
-            <th class="pressured">24</th>
-            <th class="weatherd">24</th>
-          </tr>
-
-          <tr class="mobile">
-            <th class="timed">6am</th>
-            <th class="statusd">Safe</th>
-            <th class="windd">32</th>
-            <th class="pressured">24</th>
-            <th class="weatherd">24</th>
-          </tr>
-
-          <tr class="mobile">
-            <th class="timed">6am</th>
-            <th class="statusd">Safe</th>
-            <th class="windd">32</th>
-            <th class="pressured">24</th>
-            <th class="weatherd">24</th>
-          </tr>
-
-          <tr class="wind">
-            <th>Wind Speed <i class="bi bi-info-circle"></i></th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="waterTemp">
+              <h4>15c</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+          </tr>
+          <tr>
+          <th class="timeFont">
+              <h4>9 am</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>
@@ -134,31 +87,26 @@
             </th>
           </tr>
 
-          <tr class="surface">
-            <th >Global Surface <i class="bi bi-info-circle"></i></th>
-            <th class="tableData">
-              <h4>1400</h4>
+          <tr class="tableRow">
+          <th class="timeFont">
+              <h4>12 pm</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="waterTemp">
+              <h4>15c</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
-
-              <span></span>
-              <span></span>
-              <span></span>
-            </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>
@@ -166,31 +114,26 @@
             </th>
           </tr>
 
-          <tr class="dpd">
-            <th>DPD<i class="bi bi-info-circle"></i></th>
-            <th class="tableData">
-              <h4>1400</h4>
+          <tr class="tableRow">
+          <th class="timeFont">
+              <h4>3 pm</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="waterTemp">
+              <h4>15c</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
-
-              <span></span>
-              <span></span>
-              <span></span>
-            </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>
@@ -198,31 +141,26 @@
             </th>
           </tr>
 
-          <tr class="mwd">
-            <th >MWD <i class="bi bi-info-circle"></i></th>
-            <th class="tableData">
-              <h4>1400</h4>
+          <tr class="tableRow">
+          <th class="timeFont">
+              <h4>9 pm</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="waterTemp">
+              <h4>15c</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
-
-              <span></span>
-              <span></span>
-              <span></span>
-            </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>
@@ -230,31 +168,87 @@
             </th>
           </tr>
 
-          <tr class="pressure">
-            <th >Pressure <i class="bi bi-info-circle"></i></th>
-            <th class="tableData">
-              <h4>1400</h4>
+          <tr class="tableRow">
+          <th class="timeFont">
+              <h4>12 am</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="waterTemp">
+              <h4>15c</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+          </tr>
+        </table>
+        <h1 className="mobile">Tommorow</h1>
+        <table class="mobileTable">
+          <tr class="columnHeads">
+            <th><h2>Time</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Wave Height</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Water Tempeture</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Air Pressure</h2><h1 class="headText">0.5m</h1></th>
+          </tr>
+          <tr>
+            <th class="timeFont">
+              <h4>6 am</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+          <tr>
+          <th class="timeFont">
+              <h4>9 am</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>
@@ -262,31 +256,26 @@
             </th>
           </tr>
 
-          <tr class="atmp">
-            <th>ATMP <i class="bi bi-info-circle"></i></th>
-            <th class="tableData">
-              <h4>1400</h4>
+          <tr class="tableRow">
+          <th class="timeFont">
+              <h4>12 pm</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="waterTemp">
+              <h4>15c</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
-
-              <span></span>
-              <span></span>
-              <span></span>
-            </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>
@@ -294,31 +283,26 @@
             </th>
           </tr>
 
-          <tr class="wtmp">
-            <th >WTMP <i class="bi bi-info-circle"></i></th>
-            <th class="tableData">
-              <h4>1400</h4>
+          <tr class="tableRow">
+          <th class="timeFont">
+              <h4>3 pm</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="waterTemp">
+              <h4>15c</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
-
-              <span></span>
-              <span></span>
-              <span></span>
-            </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>
@@ -326,31 +310,606 @@
             </th>
           </tr>
 
-          <tr class="dewp">
-            <th>DEWP <i class="bi bi-info-circle"></i></th>
-            <th class="tableData">
-              <h4>1400</h4>
+          <tr class="tableRow">
+          <th class="timeFont">
+              <h4>9 pm</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="waterTemp">
+              <h4>15c</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+            <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>
               <span></span>
             </th>
-            <th class="tableData">
-              <h4>1400</h4>
+          </tr>
+
+          <tr class="tableRow">
+          <th class="timeFont">
+              <h4>12 am</h4>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+        </table>
+        <div class="forecastPage">
+        {/* Todays Table */}
+        <h1 class="hidden">Today<i class="bi bi-chevron-down"></i></h1>
+        <table class="hidden">
+          <tr class="columnHeads">
+            <th><h2>Time</h2> <h1 class="headText">0.2m</h1></th>
+            <th><h2>Rating</h2><h1 class="headText">0.4m</h1></th>
+            <th><h2>Weather</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Wind speed</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Wave Height</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Water Tempeture</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Air Pressure</h2><h1 class="headText">0.5m</h1></th>
+          </tr>
+
+
+
+          <tr class="tableRow">
+            <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+            <th class="rating">
+              <h4>Safe</h4>
+
+
+            </th>
+            <th class="weather">
+            <h2> 23 °C <img className="ratingIcon" src={sunny} alt="sun" /> </h2>
+            </th>
+            <th class="time">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+
+          <tr class="tableRow">
+          <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+
+            <th class="rating">
+              <h4>Safe</h4>
+            </th>
+            <th class="weather">
+            <h2> 23 °C <img className="ratingIcon" src={rainy} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+
+          <tr class="tableRow">
+          <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+
+            <th class="rating">
+              <h4>Safe</h4>
+
+
+            </th>
+            <th class="weather">
+            <h2> 23 °C <img  className="ratingIcon" src={rainy} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+
+          <tr class="tableRow">
+            <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+
+            <th class="rating">
+              <h4>Safe</h4>
+
+
+            </th>
+            <th class="weather">
+            <h2> 23 °C <img  className="ratingIcon" src={sunnycloudy} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+
+          <tr class="tableRow">
+            <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+
+            <th class="rating">
+              <h4>Safe</h4>
+
+
+            </th>
+            <th class="weather">
+            <h2> 23 °C <img  className="ratingIcon" src={sunny} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+
+          <tr class="tableRow">
+            <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+
+            <th class="rating">
+              <h4>Safe</h4>
+            </th>
+
+            <th class="weather">
+            <h2> 23 °C <img className="ratingIcon" src={sunny} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+        </table>
+
+
+        {/* Tommorows Table  */}
+        <h1 class="hidden">Tommorow<i class="bi bi-chevron-down"></i></h1>
+        <table class="hidden"> 
+        <tr class="columnHeads">
+            <th><h2>Time</h2> <h1 class="headText">0.2m</h1></th>
+            <th><h2>Rating</h2><h1 class="headText">0.4m</h1></th>
+            <th><h2>Weather</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Wind speed</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Wave Height</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Water Tempeture</h2><h1 class="headText">0.5m</h1></th>
+            <th><h2>Air Pressure</h2><h1 class="headText">0.5m</h1></th>
+          </tr>
+
+
+
+          <tr class="tableRow">
+            <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+            <th class="rating">
+              <h4>Safe</h4>
+
+
+            </th>
+            <th class="weather">
+            <h2> 23 °C <img className="ratingIcon" src={sunny} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+
+          <tr class="tableRow">
+          <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+
+            <th class="rating">
+              <h4>Safe</h4>
+            </th>
+            <th class="weather">
+            <h2> 23 °C <img className="ratingIcon" src={sunny} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+
+          <tr class="tableRow">
+          <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+
+            <th class="rating">
+              <h4>Safe</h4>
+
+
+            </th>
+            <th class="weather">
+            <h2> 23 °C <img  className="ratingIcon" src={sunny} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+
+          <tr class="tableRow">
+            <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+
+            <th class="rating">
+              <h4>Safe</h4>
+
+
+            </th>
+            <th class="weather">
+            <h2> 23 °C <img  className="ratingIcon" src={sunny} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+
+          <tr class="tableRow">
+            <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+
+            <th class="rating">
+              <h4>Safe</h4>
+
+
+            </th>
+            <th class="weather">
+            <h2> 23 °C <img  className="ratingIcon" src={sunny} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="airPressure">
+              <h4>100mb</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+          </tr>
+
+          <tr class="tableRow">
+            <th class="tableTime">
+              <h2 class="timeFont">6am</h2>
+              <span class="timeSafety"></span>
+            </th>
+
+            <th class="rating">
+              <h4>Safe</h4>
+            </th>
+
+            <th class="weather">
+            <h2> 23 °C <img className="ratingIcon" src={sunny} alt="sun" /> </h2>
+            </th>
+            <th class="windSpeed">
+              <h4>2.00kph</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waveHeight">
+              <h4>4.3m</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+            <th class="waterTemp">
+              <h4>15c</h4>
+
+              <span></span>
+              <span></span>
+              <span></span>
+            </th>
+                        <th class="airPressure">
+              <h4>100mb</h4>
 
               <span></span>
               <span></span>

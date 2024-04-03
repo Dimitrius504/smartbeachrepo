@@ -1,5 +1,7 @@
 import './App.css';
 import './Forecast.css';
+import './Live.css';
+import './Landing.css';
 //import Conditions from './components/Condition';
 import WeatherComponent from './components/Weather';
 import ApiComponent from './components/Kincardine';
@@ -7,7 +9,9 @@ import Header from './views/shared/Header';
 import Landing from './views/Landing';
 import Forecast from './views/Forecast';
 import Live from './views/Live'
-
+// import 'bootstrap';
+// import 'bootstrap-icons';
+// import 'react-popper';
 
 //Dependencies
 import { BrowserRouter, Routes, Route } from "react-router-dom";

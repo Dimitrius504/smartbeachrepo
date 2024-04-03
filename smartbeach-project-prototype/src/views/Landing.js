@@ -44,7 +44,9 @@ function Landing() {
         setWeatherIcon(sunny);
       } else if (
         description.includes("scattered clouds") ||
-        description.includes("broken clouds")
+        description.includes("broken clouds") ||
+        description.includes("poop") ||
+        description.includes("overcast clouds")
       ) {
         setWeatherIcon(sunnyclowdy);
       } else if (
@@ -72,9 +74,12 @@ function Landing() {
         <div className="introduction">
           <div className="intro-text">
             <h1 className="landing">
-              {temperature}°c     <img src={weatherIcon} alt="weatherIcon" id="weatherIcon"/>
+              {temperature}°c{" "}
+              <img src={weatherIcon} alt="weatherIcon" id="weatherIcon" />
             </h1>
-            <h2><em>{description}</em></h2>
+            <h2>
+              <em>{description}</em>
+            </h2>
             <div className="cta">
               <Link to="/forecast">
                 <button className="cta-select">
@@ -95,8 +100,14 @@ function Landing() {
         </div>
 
         <div className="cover">
-          <img src={live} alt="Live Footage" />
-          <h1 className="cover-text">LIVE Smart Beach, ON</h1>
+          <iframe
+            src="https://www.youtube.com/embed/Anpo_1-tsUs"
+            title="Drone video of Kincardine"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+
+          <h1 className="cover-text">Station Beach, ON</h1>
         </div>
       </section>
     </main>
