@@ -1,0 +1,26 @@
+.custom-header {
+    background-color: #aee1ff; /* Your custom color */
+  }
+
+  .ml-auto-custom {
+    margin-left: auto !important;
+    padding-bottom: 20px;
+  }
+
+  /* Custom CSS */
+.navbar-toggler-icon {
+  color: wheat;
+}
+
+.nav-link {
+  color: #ffffff !important;
+  font-size: 20px !important ;
+  font-weight: bold !important;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+  
+  

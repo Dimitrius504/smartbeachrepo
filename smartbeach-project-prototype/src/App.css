@@ -26,10 +26,6 @@ header {
   align-items: center;
 }
 
-.hamburger {
-  content: none;
-}
-
 #hero {
   background-size: cover;
   background-repeat: no-repeat;
@@ -44,6 +40,48 @@ header {
   
 }
 
+#root > div > nav > button {
+  background-color: none;
+  border: none;
+  color: whitesmoke;
+}
+
+#root > div > nav > button > span {
+  background-color:#f1f1f1 ;
+  border-radius: 15px;
+  color: #ffffff;
+}
+.toggler-icon {
+  background-color: #000;
+}
+
+.custom-toggler {
+  position: relative;
+}
+
+/* Custom CSS for side navigation menu */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav .nav-link {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
 .logo-container,
 .nav-links,
 .cart {
@@ -53,6 +91,7 @@ header {
 .logo-container {
   flex: 1;
 }
+
 
 nav {
   flex: 2;
@@ -229,13 +268,13 @@ span {
 
 /* Forecast Page */
 
-/* .forecast-table {
+.forecast-table {
   display: flex;
   margin: auto;
   padding: 2%;
   height: 80vh;
   width: 80vw;
-} */
+}
 
 @media (min-width: 801px) {
   .hamburger-menu-button {

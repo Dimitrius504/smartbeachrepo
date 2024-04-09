@@ -5,6 +5,7 @@ import rainy from "../assets/images/rainy.png";
 import live from "../assets/images/live.jpg";
 import ApiComponent from "../components/Kincardine";
 
+
 import { Link } from "react-router-dom";
 
 function Landing() {
@@ -24,6 +25,8 @@ function Landing() {
         setDescription(data.description);
         setLoading(false);
         updateWeatherIcon(data.description);
+        const advisory = ApiComponent.safetyDeterminator(data);
+        setGeneralAdvisory(advisory);
       })
       .catch((error) => {
         console.error("Error fetching weather data:", error);
@@ -38,6 +41,13 @@ function Landing() {
     }
   }, [loading]);
 
+
+  // const updateAdvisory = (generalAdvisory) => {
+  //   if (generalAdvisory.includes('Mostly Unsafe') {
+      
+  //   })
+  // }
+
   const updateWeatherIcon = (description) => {
     if (description) {
       if (description.includes("clear") || description.includes("few clouds")) {
@@ -45,7 +55,6 @@ function Landing() {
       } else if (
         description.includes("scattered clouds") ||
         description.includes("broken clouds") ||
-        description.includes("poop") ||
         description.includes("overcast clouds")
       ) {
         setWeatherIcon(sunnyclowdy);
@@ -69,8 +78,8 @@ function Landing() {
   }
 
   return (
-    <main>
-      <section className="presentation">
+    <div>
+      <div className="presentation">
         <div className="introduction">
           <div className="intro-text">
             <h1 className="landing">
@@ -109,8 +118,8 @@ function Landing() {
 
           <h1 className="cover-text">Station Beach, ON</h1>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }
 

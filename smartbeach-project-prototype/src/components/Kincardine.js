@@ -18,6 +18,8 @@ class ApiComponent extends Component {
       total_water_velocity_1: null,
       loading: true,
     };
+
+    this.safetyDeterminator = this.safetyDeterminator.bind(this);
   }
 
   componentDidMount() {
@@ -55,13 +57,12 @@ class ApiComponent extends Component {
         this.setState({ loading: false });
       });
   }
-  
-  // wind speed safety determinator
+
   getWindCondition(windspeed) {
     if (windspeed < 17.5) {
-      return "Good - Green";
+      return "Safe - Green";
     } else if (windspeed >= 39) {
-      return "Bad - Red";
+      return "Unsafe - Red";
     } else if (windspeed >= 60) {
       return "Extreme Conditions, Very Unsafe";
     } else {
@@ -69,98 +70,92 @@ class ApiComponent extends Component {
     }
   }
 
-  // air pressure safety determinator
   getAirPressure(air_pressure_at_mean_sea_level) {
-    if (air_pressure_at_mean_sea_level < 980000) {
-      return "Bad  - Red";
-    } else if (air_pressure_at_mean_sea_level > 1050000) {
-      return "Bad  - Red";
+    let main_sea_level = air_pressure_at_mean_sea_level;
+
+    // Convert to Pascals (Pa)
+    let pressure_Pa = main_sea_level * 100000;
+
+    if (pressure_Pa >= 102300) {
+      return "Unsafe";
+    } else if (pressure_Pa <= 100300) {
+      return "Unsafe";
     } else {
-      return "Good - Green";
+      return "Safe";
     }
   }
 
-  //  air temperature safety detminator
   getAirTemperature(air_temperature) {
     const temperatureCelsius = air_temperature - 273.15;
-  
-    if (temperatureCelsius < 10) {
-      return "Bad -  Too Cold  - Red";
-    } else if (temperatureCelsius > 30) {
-      return "Bad  - Too Hot - Red";
+    if (temperatureCelsius < 10 || temperatureCelsius > 30) {
+      return "Unsafe - Red";
     } else if (temperatureCelsius <= -5 || temperatureCelsius <= 35) {
-      return "Extremely Unsafe Beach Conditions";
+      return "Extreme Conditions, Very Unsafe";
     } else {
-      return `Good - Safe`;
+      return "Safe - Green";
     }
   }
-  
 
-  //  Sea surface wave mean period safety determinator
   getSeaSurfaceWave(sea_surface_wave_mean_period) {
     if (sea_surface_wave_mean_period < 5) {
-      return "Red  - Bad";
+      return "Unsafe - Red";
     } else if (sea_surface_wave_mean_period > 10) {
-      return "Good - Green";
+      return "Safe - Green";
     } else {
-      return "Somewhat Unsafe - Yellow";
+      return "Caution - Yellow";
     }
   }
 
   getSeaSurfaceWaveHeight(sea_surface_wave_significant_height) {
     if (sea_surface_wave_significant_height > 3) {
-      return "Red  - Bad For Boaters";
-    } else if (sea_surface_wave_significant_height < 1) {
-      return "Green  - Good";
+      return "Unsafe - Red For Boaters";
+    } else if (sea_surface_wave_significant_height < 1.5) {
+      return "Safe - Green";
     } else {
-      return "Yellow - Somewhat Unsafe";
+      return "Caution - Yellow";
     }
   }
 
   getSeaSurfaceWaveDirection(sea_surface_wave_from_direction) {
-    // Convert wind direction to compass direction
     const compassDirections = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
     const index = Math.round(sea_surface_wave_from_direction / 45) % 8;
     const compassDirection = compassDirections[index];
 
-    // Assess beach safety based on wind direction
-    if (
-      compassDirection === "NE" ||
-      compassDirection === "E" ||
-      compassDirection === "SE"
-    ) {
+    if (["NE", "E", "SE"].includes(compassDirection)) {
       return `Safe - Green - Offshore Winds - ${compassDirection}`;
-    } else if (compassDirection === "N" || compassDirection === "S") {
-      return `Neutral - Yellow - Crossshore Winds - ${compassDirection}`;
+    } else if (["N", "S"].includes(compassDirection)) {
+      return `Caution - Yellow - Crossshore Winds - ${compassDirection}`;
     } else {
-      return `Unsafe - Red - Onshore Winds  - ${compassDirection}`;
+      return `Yellow - Caution - Onshore Winds  - ${compassDirection}`;
     }
   }
 
   getWindFromDirection(wind_from_direction) {
     const normalizedWindDirection = (wind_from_direction + 360) % 360;
 
-    if (normalizedWindDirection >= 45 && normalizedWindDirection <= 135) {
-      return "Unsafe - Red - Onshore Winds";
+    if (
+      (normalizedWindDirection >= 45 && normalizedWindDirection <= 135) ||
+      (normalizedWindDirection >= 225 && normalizedWindDirection <= 315)
+    ) {
+      return "Caution - Yellow - Onshore Winds";
     } else if (
       (normalizedWindDirection >= 0 && normalizedWindDirection < 45) ||
+      (normalizedWindDirection >= 135 && normalizedWindDirection < 225) ||
       (normalizedWindDirection > 315 && normalizedWindDirection <= 360)
     ) {
       return "Safe - Green - Offshore Winds";
     } else {
-      return "Somewhat Unsafe - Yellow - Cross-shore Winds";
+      return "Caution - Yellow - Cross-shore Winds";
     }
   }
 
   getSeaWaterTemperature(sea_water_temperature_1) {
     const temperatureCelsius = sea_water_temperature_1 - 273.15;
 
-    if (temperatureCelsius < 10) {
-      return "Bad -  Too Cold  - Red";
-    } else if (temperatureCelsius > 30) {
-      return "Bad  - Too Hot - Red";
+    if (temperatureCelsius < 5 || temperatureCelsius > 30) {
+      return "Unsafe - Red";
     } else {
-      return `Good - Safe`;
+      return "Safe - Green";
     }
   }
 
@@ -169,7 +164,6 @@ class ApiComponent extends Component {
 
   //   }
   // }
-
 
   // Determinator for overall return of safety from each conditional statement
   safetyDeterminator() {
@@ -181,68 +175,114 @@ class ApiComponent extends Component {
       sea_surface_wave_significant_height,
       sea_surface_wave_from_direction,
     } = this.state;
-  
+
     const windCondition = this.getWindCondition(windspeed);
-    const airPressureCondition = this.getAirPressure(air_pressure_at_mean_sea_level);
+    const airPressureCondition = this.getAirPressure(
+      air_pressure_at_mean_sea_level
+    );
     const airTemperatureCondition = this.getAirTemperature(air_temperature);
-    const seaWavePeriodCondition = this.getSeaSurfaceWave(sea_surface_wave_mean_period);
-    const seaWaveHeightCondition = this.getSeaSurfaceWaveHeight(sea_surface_wave_significant_height);
-    const seaWaveDirectionCondition = this.getSeaSurfaceWaveDirection(sea_surface_wave_from_direction);
-  
+    const seaWavePeriodCondition = this.getSeaSurfaceWave(
+      sea_surface_wave_mean_period
+    );
+    const seaWaveHeightCondition = this.getSeaSurfaceWaveHeight(
+      sea_surface_wave_significant_height
+    );
+    const seaWaveDirectionCondition = this.getSeaSurfaceWaveDirection(
+      sea_surface_wave_from_direction
+    );
+
     let safeCount = 0;
     let somewhatSafeCount = 0;
     let unsafeCount = 0;
-  
+
     // Count occurrences of safety conditions
-    if (windCondition.includes("Extreme")) unsafeCount++;
-    else if (windCondition.includes("Green")) safeCount++;
-    else if (windCondition.includes("Yellow")) somewhatSafeCount++;
-    else if (windCondition.includes("Red")) unsafeCount++;
-  
-    if (airPressureCondition.includes("Extreme")) unsafeCount++;
-    else if (airPressureCondition.includes("Green")) safeCount++;
-    else if (airPressureCondition.includes("Yellow")) somewhatSafeCount++;
-    else if (airPressureCondition.includes("Red")) unsafeCount++;
-  
-    if (airTemperatureCondition.includes("Extremely")) unsafeCount++;
-    else if (airTemperatureCondition.includes("Green")) safeCount++;
-    else if (airTemperatureCondition.includes("Yellow")) somewhatSafeCount++;
-    else if (airTemperatureCondition.includes("Red")) unsafeCount++;
+    if (windCondition.includes("Good") || windCondition.includes("Safe"))
+      safeCount++;
+    else if (windCondition.includes("Caution")) somewhatSafeCount++;
+    else if (
+      windCondition.includes("Extreme") ||
+      windCondition.includes("Bad") ||
+      windCondition.includes("Unsafe") ||
+      windCondition.includes("Red")
+    )
+      unsafeCount++;
 
-    if (seaWavePeriodCondition.includes("Extreme")) unsafeCount++;
-    else if (seaWavePeriodCondition.includes("Green")) safeCount++;
-    else if (seaWavePeriodCondition.includes("Yellow")) somewhatSafeCount++;
-    else if (seaWavePeriodCondition.includes("Red")) unsafeCount++;
+    if (
+      airPressureCondition.includes("Good") ||
+      airPressureCondition.includes("Safe")
+    )
+      safeCount++;
+    else if (airPressureCondition.includes("Caution")) somewhatSafeCount++;
+    else if (
+      airPressureCondition.includes("Extreme") ||
+      airPressureCondition.includes("Bad") ||
+      airPressureCondition.includes("Unsafe") ||
+      airPressureCondition.includes("Red")
+    )
+      unsafeCount++;
 
-    if (seaWaveHeightCondition.includes("Extreme")) unsafeCount++;
-    else if (seaWaveHeightCondition.includes("Green")) safeCount++;
-    else if (seaWaveHeightCondition.includes("Yellow")) somewhatSafeCount++;
-    else if (seaWaveHeightCondition.includes("Red")) unsafeCount++;
+    if (
+      airTemperatureCondition.includes("Good") ||
+      airTemperatureCondition.includes("Safe")
+    )
+      safeCount++;
+    else if (airTemperatureCondition.includes("Caution")) somewhatSafeCount++;
+    else if (
+      airTemperatureCondition.includes("Extreme") ||
+      airTemperatureCondition.includes("Bad") ||
+      airTemperatureCondition.includes("Unsafe") ||
+      airTemperatureCondition.includes("Red")
+    )
+      unsafeCount++;
 
-    if (seaWaveDirectionCondition.includes("Extreme")) unsafeCount++;
-    else if (seaWaveDirectionCondition.includes("Green")) safeCount++;
-    else if (seaWaveDirectionCondition.includes("Yellow")) somewhatSafeCount++;
-    else if (seaWaveDirectionCondition.includes("Red")) unsafeCount++;
-    
-    
+    if (
+      seaWavePeriodCondition.includes("Good") ||
+      seaWavePeriodCondition.includes("Safe")
+    )
+      safeCount++;
+    else if (seaWavePeriodCondition.includes("Caution")) somewhatSafeCount++;
+    else if (
+      seaWavePeriodCondition.includes("Extreme") ||
+      seaWavePeriodCondition.includes("Bad") ||
+      seaWavePeriodCondition.includes("Unsafe") ||
+      seaWavePeriodCondition.includes("Red")
+    )
+      unsafeCount++;
+
+    if (
+      seaWaveHeightCondition.includes("Good") ||
+      seaWaveHeightCondition.includes("Safe")
+    )
+      safeCount++;
+    else if (seaWaveHeightCondition.includes("Caution")) somewhatSafeCount++;
+    else if (
+      seaWaveHeightCondition.includes("Extreme") ||
+      seaWaveHeightCondition.includes("Bad") ||
+      seaWaveHeightCondition.includes("Unsafe") ||
+      seaWaveHeightCondition.includes("Red")
+    )
+      unsafeCount++;
+
+    if (seaWaveDirectionCondition.includes("Safe")) safeCount++;
+    else if (seaWaveDirectionCondition.includes("Caution")) somewhatSafeCount++;
+    else if (seaWaveDirectionCondition.includes("Unsafe")) unsafeCount++;
+
     // Determine general advisory based on counts
-    if (unsafeCount > safeCount && unsafeCount > somewhatSafeCount) {
-      return 'Mostly Unsafe';
-    } else if (safeCount > unsafeCount && safeCount > somewhatSafeCount) {
-      return 'Mostly Safe';
-    } else if (somewhatSafeCount > safeCount && somewhatSafeCount > unsafeCount) {
-      return 'Somewhat Safe';
-    } else if (safeCount < (unsafeCount + somewhatSafeCount)){
-      return 'Mostly Unsafe';
-    } else if (unsafeCount < (somewhatSafeCount + safeCount)){
-      return 'Mostly Safe';
-    } else {
-      return 'Unknown';
+    switch (true) {
+      case (unsafeCount > safeCount) && (unsafeCount > somewhatSafeCount):
+        return "Mostly Unsafe";
+      case( safeCount > unsafeCount) && (safeCount > somewhatSafeCount):
+        return "Mostly Safe";
+      case (somewhatSafeCount > safeCount) && (somewhatSafeCount > unsafeCount):
+        return "Somewhat Safe";
+      case safeCount < (unsafeCount + somewhatSafeCount):
+        return "Mostly Unsafe";
+      case unsafeCount < (somewhatSafeCount + safeCount):
+        return "Mostly Safe";
+      default:
+        return "Unknown";
     }
   }
-  
-  
-
   render() {
     const {
       windspeed,
@@ -302,6 +342,5 @@ class ApiComponent extends Component {
     );
   }
 }
-
 
 export default ApiComponent;

@@ -11,6 +11,7 @@ const kincardineApi = require('./routes/api');
 
 app.use(bodyParser.json())
 
+
 app.use('/conditions', conditions);
 app.use('/weather', weather);
 app.use('/api', kincardineApi);

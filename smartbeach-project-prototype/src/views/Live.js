@@ -4,13 +4,13 @@ import smartbeachgraphic from '../assets/images/infopage.png';
 
 function Live() {
   return (
-    <main>
-      <section className="presentationLive">
+    <div>
+      <div className="presentationLive">
         <div className="topImagesContainer">
           <img src={beachsafety} alt="prediction" className="sideBySideImage" />
           <img src={smartbeachgraphic} alt="smart beach banner" className="sideBySideImage" />
         </div>
-        <section className="TP">
+        <div className="TP">
           <div className="aboutContent">
             <h1 className="bold">The Smart Beach Project</h1>
             <div className="paragraphContainer">
@@ -27,9 +27,9 @@ function Live() {
               </p>
             </div>
           </div>
-        </section>
-      </section>
-    </main>
+        </div>
+      </div>
+    </div>
   );
 }
 
