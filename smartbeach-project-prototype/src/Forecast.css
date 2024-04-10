@@ -239,6 +239,8 @@ justify-content: center;
     background-color: white;
     position: relative;
     bottom: 10px;
+    justify-content: center;
+    font-family: "Gilroy-black";
   }
   h2 {
     padding: 10px;

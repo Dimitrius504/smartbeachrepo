@@ -10,6 +10,7 @@ import Header from './views/shared/Header';
 import Landing from './views/Landing';
 import Forecast from './views/Forecast';
 import Live from './views/Live'
+import Footer from './views/shared/Footer';
 // import 'bootstrap';
 // import 'bootstrap-icons';
 // import 'react-popper';
@@ -30,7 +31,10 @@ function App() {
             <Route path="/live" element={<Live/>}/>
           </Routes>
         </BrowserRouter>
+        {/* <Footer /> */}
+
     </div>
+    
   );
 }
 

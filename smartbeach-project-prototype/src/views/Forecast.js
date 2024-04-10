@@ -3,6 +3,8 @@ import rainy from "../assets/images/rainy.png";
 import sunny from "../assets/images/sunny.png";
 import sunnycloudy from "../assets/images/sunnyclowdy.png";
 import ApiComponent from "../components/Kincardine";
+import logobeach from "../assets/images/logobeach.png"
+
 import {
   getWindCondition,
   getSeaWaterTemperature,
@@ -286,9 +288,14 @@ function Forecast() {
   };
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return (
+      <div id="loading">
+        <div id="loading-content">
+          <img src={logobeach} alt="Logo" />
+        </div>
+      </div>
+    );
   }
-
   return (
     <main>
       <div className="mobileHead">

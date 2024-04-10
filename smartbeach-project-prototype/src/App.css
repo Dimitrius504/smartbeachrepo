@@ -545,7 +545,6 @@ span {
     font-size: 1.5rem;
   }
 }
-/* Styling for Live page */
 
 /* Styling for Live page */
 
@@ -580,6 +579,16 @@ span {
   margin-bottom: 10px;
 }
 
+#root > div > nav > div > button {
+  border: none;
+  background-color: white;
+  border-radius: 100px;
+  width: auto;
+  height: auto;
+  color: #ACCAEA;
+}
+
+
 /* Image styling */
 .TP img {
   max-width: 100%; /* Ensure the image does not exceed the container width */
@@ -597,6 +606,20 @@ span {
   font-weight: bold;
   color: #333;
 }
+
+ #loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+#loading-content {
+ align-items: center;
+}
+
 
 /* Media query for smaller devices */
 @media (max-width: 600px) {

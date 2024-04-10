@@ -1,92 +1,124 @@
 .live-wrapper {
-    min-height: 70vh;
-    background-image: url('./assets/images/background.png');
-    background-position: left top;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
-  #live-hero > h1 {
-    font-size: clamp(32px, 5vw, 52px);
-    max-width: 600px;
-    color: rgb(27, 27, 27);
-    
-  }
-  
-  #live-hero > a {
-    display: block;
-    background-color: lightskyblue;
-    color: white;
-    padding: 1rem 1.25rem;
-    border-radius: 2rem;
-    font-size: 20px;
-    text-decoration: none;
-    width: 150px;
-    text-align: center;
-    margin-left: 200px; 
-  }
-  
-  
-  #live-info-container {
-    text-align: center;
-    padding: 2rem 0 10rem 0;
-  }
-  
-  #live-hero {
-    display: flex;
-    flex-direction: column;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 10rem 5rem;
-  }
-  
+  min-height: 70vh;
+  background-image: url(./assets/images/abouthero.webp);
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+#live-hero > h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  max-width: 600px;
+  color: rgb(27, 27, 27);
+  font-family: "Gilroy-Black";
+}
+
+#live-hero > a {
+  display: block;
+  background-color: lightskyblue;
+  color: white;
+  padding: 1rem 1.25rem;
+  border-radius: 2rem;
+  font-size: 20px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  margin-left: 200px; 
+}
+
+
+#live-info-container {
+  text-align: center;
+  padding: 0 0 10rem 0;
+}
+
+#live-info-container > h1 {
+  padding-top: 2%;
+  color: white;
+  background-color: black;
+  height: 20vh;
+  background-color: rgba(128, 128, 128, 0.512);
+  font-family: "Gilroy-Black";
+}
+
+#live-hero {
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10rem 5rem;
+}
+
+.live-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+#livesafetytext2, #livesafetytext1 {
+  max-width: 40%;
+  background-color: antiquewhite;
+  padding: 3%;
+  border-radius: 10px;
+  font-family: "Gilroy-Black";
+}
+
+#live-info-container > div:nth-of-type(1) {
+  margin: 5rem auto;
+}
+
+@media screen and (max-width: 1366px) {
   .live-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    max-width: 1366px;
-    margin: 0 auto;
+      flex-direction: column;
+  }
+
+  .live-info-img {
+      order: 2;
+  }
+
+  .info-img > img {
+      max-width: 100%;
+      height: auto;
+
+  }
+
+  #livesafetytext2, #livesafetytext1 {
+    max-width: 90%;
+    background-color: antiquewhite;
+    padding: 3%;
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 900px) {
+      .live-wrapper {
+          background-image: url(./assets/images/abouthero.webp);
+          background-position: center;
+          
+      }
+
+      #live-hero {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 10rem 5rem;
+      }
+
+      #live-hero > h1 {
+          text-align: center;
+      }
+
+      #live-hero > a {
+        display: block;
+        margin-top: 2rem; /* Add margin top for spacing */
+        margin-left: 0;
+      }
   }
   
-  
-  #live-info-container > div:nth-of-type(1) {
-    margin: 5rem auto;
-  }
-  
-  @media screen and (max-width: 1366px) {
-    .live-info {
-        flex-direction: column;
-    }
-  
-    .live-info-img {
-        order: 2;
-    }
-  
-    .info-img > img {
-        max-width: 100%;
-        height: auto;
-    }
-  
-    @media screen and (max-width: 900px) {
-        .live-wrapper {
-            background-image: url('./assets/images/background.png');
-            background-position: center;
-        }
-  
-        #live-hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 10rem 5rem;
-        }
-  
-        #live-hero > h1 {
-            text-align: center;
-        }
-    }
-    
-  }
+}

@@ -12,6 +12,10 @@
   color: wheat;
 }
 
+.navbar-toggler:focus {
+  outline: none;
+}
+
 .nav-link {
   color: #ffffff !important;
   font-size: 20px !important ;

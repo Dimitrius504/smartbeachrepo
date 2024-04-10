@@ -3,8 +3,8 @@ import sunny from "../assets/images/sunny.png";
 import sunnyclowdy from "../assets/images/sunnyclowdy.png";
 import rainy from "../assets/images/rainy.png";
 import live from "../assets/images/live.jpg";
+import logobeach from "../assets/images/logobeach.png";
 import ApiComponent from "../components/Kincardine";
-
 
 import { Link } from "react-router-dom";
 
@@ -41,10 +41,9 @@ function Landing() {
     }
   }, [loading]);
 
-
   // const updateAdvisory = (generalAdvisory) => {
   //   if (generalAdvisory.includes('Mostly Unsafe') {
-      
+
   //   })
   // }
 
@@ -74,7 +73,13 @@ function Landing() {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div id="loading">
+        <div id="loading-content">
+          <img src={logobeach} alt="Logo" />
+        </div>
+      </div>
+    );
   }
 
   return (
