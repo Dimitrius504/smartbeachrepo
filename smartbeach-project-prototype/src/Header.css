@@ -1,19 +1,27 @@
-.custom-header {
-    background-color: #aee1ff; /* Your custom color */
-  }
-
-  .ml-auto-custom {
-    margin-left: auto !important;
-    padding-bottom: 20px;
-  }
-
-  /* Custom CSS */
-.navbar-toggler-icon {
-  color: wheat;
+header {
+  display: flex;
+  height: 10vh;
+  width: 90%;
+  margin: auto;
+  align-items: center;
 }
 
-.navbar-toggler:focus {
-  outline: none;
+.toggler-icon {
+  background-color: #000;
+}
+
+.custom-toggler {
+  position: relative;
+}
+
+nav {
+  flex: 2;
+  background-color: #aee1ff
+}
+
+.nav-links {
+  justify-content: space-around;
+  list-style: none;
 }
 
 .nav-link {
@@ -26,5 +34,39 @@
   margin-right: 50px;
 }
 
-  
-  
+.custom-header {
+  background-color: #aee1ff; 
+  box-shadow: 0 10px 30px rgba(135, 135, 135, 0.3); 
+}
+
+.ml-auto-custom {
+  margin-left: auto !important;
+  /* padding-bottom: 20px; */
+}
+
+
+.navbar-toggler-icon {
+color: wheat;
+}
+
+.nav-link {
+color: #ffffff !important;
+font-size: 20px !important ;
+font-weight: bold !important;
+text-decoration: none;
+cursor: pointer;
+/* margin-top: 20px; */
+margin-right: 50px;
+}
+
+
+.hamburger-menu {
+  display: none;
+  margin-left: auto;
+  right: 5%;
+  height: 30px;
+  width: 60px;
+  position: absolute;
+  transform: rotate(90deg);
+}
+

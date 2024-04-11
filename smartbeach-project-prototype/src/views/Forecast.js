@@ -4,6 +4,7 @@ import sunny from "../assets/images/sunny.png";
 import sunnycloudy from "../assets/images/sunnyclowdy.png";
 import ApiComponent from "../components/Kincardine";
 import logobeach from "../assets/images/logobeach.png"
+import '../Forecast.css'
 
 import {
   getWindCondition,
@@ -161,58 +162,56 @@ function Forecast() {
         setLoading(false);
       });
   }, []);
-
-  useEffect(() => {
-    if (!loading) {
-      const apiComponent = new ApiComponent();
-      setGeneralAdvisory(apiComponent.safetyDeterminator());
-    }
-  }, [loading]);
-
   useEffect(() => {
     const setColorByCondition = (data, selector) => {
       if (data !== null) {
-        const condition = getWindCondition(data.windSpeed);
-        const color =
-          condition === "Safe"
-            ? "#47d49a"
-            : condition === "Unsafe"
-            ? "#f26322"
-            : "#fbd858";
+        let color;
+        if (data.airpressure !== null) {
+          const condition = getAirPressure(data.airpressure);
+          color = condition === "Safe" ? "#47d49a" : "#fbd858";
+        } else {
+          const condition = getWindCondition(data.windSpeed);
+          color =
+            condition === "Safe"
+              ? "#47d49a"
+              : condition === "Unsafe"
+              ? "#f26322"
+              : "#fbd858";
+        }
         document.querySelectorAll(selector).forEach((span) => {
           span.style.backgroundColor = color;
         });
       }
     };
-
+  
     setColorByCondition(tomorrowNineAMData, ".nineAmWindSpan");
     setColorByCondition(tomorrowTwelvePMData, ".twelveTmrWind");
     setColorByCondition(tomorrowThreePMData, ".tmrThreeWind");
     setColorByCondition(tomorrowSixPMData, ".tmrSixWind");
     setColorByCondition(tomorrowNinePMData, ".tmrNineWind");
     setColorByCondition(tomorrowMidnightData, ".tmrMidnightWind");
-
+  
     setColorByCondition(tomorrowNineAMData, ".nineAmAirpres");
     setColorByCondition(tomorrowTwelvePMData, ".twelvePmAirpress");
     setColorByCondition(tomorrowThreePMData, ".threePmAirPress");
     setColorByCondition(tomorrowSixPMData, ".sixPmAirPress");
     setColorByCondition(tomorrowNinePMData, ".ninePmAirPress");
     setColorByCondition(tomorrowMidnightData, ".midnightAirPress");
-
+  
     setColorByCondition(dayAfterNineAMData, ".dayAfterNineAmWind");
     setColorByCondition(dayAferTwelvePMData, ".dayAfterTwelvePmWind");
     setColorByCondition(dayAfterthreePMData, ".dayAfterThreePmWind");
     setColorByCondition(dayAftersixPMData, ".dayAfterSixPmWind");
     setColorByCondition(dayAfterninePMData, ".dayAfterNinePmWind");
     setColorByCondition(dayAftermidnightData, ".dayAfterMidnightWind");
-
+  
     setColorByCondition(dayAfterNineAMData, ".dayAferNineAmAirpress");
     setColorByCondition(dayAferTwelvePMData, ".dayAferTwelvePmAirpress");
     setColorByCondition(dayAfterthreePMData, ".dayAferThreePmAirpress");
     setColorByCondition(dayAftersixPMData, ".dayAferSixPmAirpress");
     setColorByCondition(dayAfterninePMData, ".dayAferNinePmAirpress");
     setColorByCondition(dayAftermidnightData, ".dayAferMidnightAirpress");
-
+  
     if (waveHeight !== null) {
       const condition = getSeaSurfaceWaveHeight(waveHeight);
       const color =
@@ -232,7 +231,7 @@ function Forecast() {
         span.style.backgroundColor = "grey";
       });
     }
-
+  
     if (seaWaterTemp !== null) {
       const condition = getSeaWaterTemperature(seaWaterTemp);
       const color = condition === "Safe" ? "#fbd858" : "#47d49a";
@@ -244,7 +243,7 @@ function Forecast() {
         span.style.backgroundColor = "grey";
       });
     }
-  }, [windSpeed, airpressure, waveHeight, seaWaterTemp]);
+  }, [windSpeed, airpressure, waveHeight, seaWaterTemp, tomorrowNineAMData, tomorrowTwelvePMData, tomorrowThreePMData, tomorrowSixPMData, tomorrowNinePMData, tomorrowMidnightData, dayAfterNineAMData, dayAferTwelvePMData, dayAfterthreePMData, dayAftersixPMData, dayAfterninePMData, dayAftermidnightData]);  
 
   const updateWeatherIcon = (description) => {
     let iconPath;
@@ -297,7 +296,7 @@ function Forecast() {
     );
   }
   return (
-    <main>
+    <main id="forecast-page">
       <div className="mobileHead">
         <h1 className="headTime">{currentDayOfWeek}</h1>
         <br />
@@ -376,19 +375,13 @@ function Forecast() {
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
                 <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
                 <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
             </tr>
@@ -399,19 +392,13 @@ function Forecast() {
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
                 <span className="seaWaterTemp"></span>
               </th>
             </tr>
@@ -423,19 +410,13 @@ function Forecast() {
               <th className="airPressure">
                 <h4>{tomorrowNineAMData.airpressure} hPa</h4>
                 <span className="nineAmAirpres"></span>
-                <span className="nineAmAirpres"></span>
-                <span className="nineAmAirpres"></span>
               </th>
               <th className="airPressure">
                 <h4>{tomorrowThreePMData.airpressure} hPa</h4>
                 <span className="threePmAirPress"></span>
-                <span className="threePmAirPress"></span>
-                <span className="threePmAirPress"></span>
               </th>
               <th className="airPressure">
                 <h4>{tomorrowNinePMData.airpressure} hPa</h4>
-                <span className="ninePmAirPress"></span>
-                <span className="ninePmAirPress"></span>
                 <span className="ninePmAirPress"></span>
               </th>
             </tr>
@@ -454,19 +435,13 @@ function Forecast() {
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
                 <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
                 <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
             </tr>
@@ -477,19 +452,13 @@ function Forecast() {
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
                 <span className="seaWaterTemp"></span>
               </th>
             </tr>
@@ -501,19 +470,13 @@ function Forecast() {
               <th className="airPressure">
                 <h4>{dayAfterNineAMData.airpressure} hPa</h4>
                 <span className="dayAferNineAmAirpress"></span>
-                <span className="dayAferNineAmAirpress"></span>
-                <span className="dayAferNineAmAirpress"></span>
               </th>
               <th className="airPressure">
                 <h4>{dayAfterthreePMData.airpressure} hPa</h4>
                 <span className="dayAferThreePmAirpress"></span>
-                <span className="dayAferThreePmAirpress"></span>
-                <span className="dayAferThreePmAirpress"></span>
               </th>
               <th className="airPressure">
                 <h4>{dayAfterninePMData.airpressure} hPa</h4>
-                <span className="dayAferNinePmAirpress"></span>
-                <span className="dayAferNinePmAirpress"></span>
                 <span className="dayAferNinePmAirpress"></span>
               </th>
             </tr>
@@ -575,7 +538,7 @@ function Forecast() {
                   )}
                 </h4>
               </th>
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {tomorrowNineAMData.temperature} °C{" "}
@@ -589,28 +552,20 @@ function Forecast() {
                 <h4>{tomorrowNineAMData.windSpeed} kph</h4>
 
                 <span className="nineAmWindSpan"></span>
-                <span className="nineAmWindSpan"></span>
-                <span className="nineAmWindSpan"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{tomorrowNineAMData.airpressure} hPa</h4>
 
-                <span className="nineAmAirpres"></span>
-                <span className="nineAmAirpres"></span>
                 <span className="nineAmAirpres"></span>
               </th>
             </tr>
@@ -635,7 +590,7 @@ function Forecast() {
                   )}
                 </h4>
               </th>
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {tomorrowTwelvePMData.temperature} °C{" "}
@@ -649,28 +604,20 @@ function Forecast() {
                 <h4>{tomorrowTwelvePMData.windSpeed} kph</h4>
 
                 <span className="twelveTmrWind"></span>
-                <span className="twelveTmrWind"></span>
-                <span className="twelveTmrWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{tomorrowTwelvePMData.airpressure} hPa</h4>
 
-                <span className="twelvePmAirpress"></span>
-                <span className="twelvePmAirpress"></span>
                 <span className="twelvePmAirpress"></span>
               </th>
             </tr>
@@ -695,7 +642,7 @@ function Forecast() {
                   )}
                 </h4>
               </th>
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {tomorrowThreePMData.temperature} °C{" "}
@@ -709,28 +656,20 @@ function Forecast() {
                 <h4>{tomorrowThreePMData.windSpeed} kph</h4>
 
                 <span className="tmrThreeWind"></span>
-                <span className="tmrThreeWind"></span>
-                <span className="tmrThreeWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{tomorrowThreePMData.airpressure} hPa</h4>
 
-                <span className="threePmAirPress"></span>
-                <span className="threePmAirPress"></span>
                 <span className="threePmAirPress"></span>
               </th>
             </tr>
@@ -753,7 +692,7 @@ function Forecast() {
                   )}
                 </h4>
               </th>
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {tomorrowSixPMData.temperature} °C{" "}
@@ -767,28 +706,20 @@ function Forecast() {
                 <h4>{tomorrowSixPMData.windSpeed} kph</h4>
 
                 <span className="tmrSixWind"></span>
-                <span className="tmrSixWind"></span>
-                <span className="tmrSixWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{tomorrowSixPMData.airpressure} hPa</h4>
 
-                <span className="sixPmAirPress"></span>
-                <span className="sixPmAirPress"></span>
                 <span className="sixPmAirPress"></span>
               </th>
             </tr>
@@ -811,7 +742,7 @@ function Forecast() {
                   )}
                 </h4>
               </th>
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {tomorrowNinePMData.temperature} °C{" "}
@@ -825,28 +756,20 @@ function Forecast() {
                 <h4>{tomorrowNinePMData.windSpeed} kph</h4>
 
                 <span className="tmrNineWind"></span>
-                <span className="tmrNineWind"></span>
-                <span className="tmrNineWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{tomorrowNinePMData.airpressure} hPa</h4>
 
-                <span className="ninePmAirPress"></span>
-                <span className="ninePmAirPress"></span>
                 <span className="ninePmAirPress"></span>
               </th>
             </tr>
@@ -872,7 +795,7 @@ function Forecast() {
                 </h4>
               </th>
 
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {tomorrowMidnightData.temperature} °C{" "}
@@ -886,28 +809,20 @@ function Forecast() {
                 <h4>{tomorrowMidnightData.windSpeed} kph</h4>
 
                 <span className="tmrMidnightWind"></span>
-                <span className="tmrMidnightWind"></span>
-                <span className="tmrMidnightWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{tomorrowMidnightData.airpressure} hPa</h4>
 
-                <span className="midnightAirPress"></span>
-                <span className="midnightAirPress"></span>
                 <span className="midnightAirPress"></span>
               </th>
             </tr>
@@ -968,7 +883,7 @@ function Forecast() {
                   )}
                 </h4>
               </th>
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {dayAfterNineAMData.temperature} °C{" "}
@@ -982,28 +897,20 @@ function Forecast() {
                 <h4>{dayAfterNineAMData.windSpeed} kph</h4>
 
                 <span className="dayAfterNineAmWind"></span>
-                <span className="dayAfterNineAmWind"></span>
-                <span className="dayAfterNineAmWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{dayAfterNineAMData.airpressure} hPa</h4>
 
-                <span className="dayAferNineAmAirpress"></span>
-                <span className="dayAferNineAmAirpress"></span>
                 <span className="dayAferNineAmAirpress"></span>
               </th>
             </tr>
@@ -1028,7 +935,7 @@ function Forecast() {
                   )}
                 </h4>
               </th>
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {dayAferTwelvePMData.temperature} °C{" "}
@@ -1042,28 +949,20 @@ function Forecast() {
                 <h4>{dayAferTwelvePMData.windSpeed} kph</h4>
 
                 <span className="dayAfterTwelvePmWind"></span>
-                <span className="dayAfterTwelvePmWind"></span>
-                <span className="dayAfterTwelvePmWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{dayAferTwelvePMData.airpressure} hPa</h4>
 
-                <span className="dayAferTwelvePmAirpress"></span>
-                <span className="dayAferTwelvePmAirpress"></span>
                 <span className="dayAferTwelvePmAirpress"></span>
               </th>
             </tr>
@@ -1088,7 +987,7 @@ function Forecast() {
                   )}
                 </h4>
               </th>
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {dayAfterthreePMData.temperature} °C{" "}
@@ -1102,28 +1001,20 @@ function Forecast() {
                 <h4>{dayAfterthreePMData.windSpeed} kph</h4>
 
                 <span className="dayAfterThreePmWind"></span>
-                <span className="dayAfterThreePmWind"></span>
-                <span className="dayAfterThreePmWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{dayAfterthreePMData.airpressure} hPa</h4>
 
-                <span className="dayAferThreePmAirpress"></span>
-                <span className="dayAferThreePmAirpress"></span>
                 <span className="dayAferThreePmAirpress"></span>
               </th>
             </tr>
@@ -1146,7 +1037,7 @@ function Forecast() {
                   )}
                 </h4>
               </th>
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {dayAftersixPMData.temperature} °C{" "}
@@ -1160,28 +1051,20 @@ function Forecast() {
                 <h4>{dayAftersixPMData.windSpeed} kph</h4>
 
                 <span className="dayAfterSixPmWind"></span>
-                <span className="dayAfterSixPmWind"></span>
-                <span className="dayAfterSixPmWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{dayAftersixPMData.airpressure} hPa</h4>
 
-                <span className="dayAferSixPmAirpress"></span>
-                <span className="dayAferSixPmAirpress"></span>
                 <span className="dayAferSixPmAirpress"></span>
               </th>
             </tr>
@@ -1204,7 +1087,7 @@ function Forecast() {
                   )}
                 </h4>
               </th>
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {dayAfterninePMData.temperature} °C{" "}
@@ -1217,28 +1100,20 @@ function Forecast() {
               <th className="windSpeed">
                 <h4>{dayAfterninePMData.windSpeed} kph</h4>
                 <span className="dayAfterNinePmWind"></span>
-                <span className="dayAfterNinePmWind"></span>
-                <span className="dayAfterNinePmWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{dayAfterninePMData.airpressure} hPa</h4>
 
-                <span className="dayAferNinePmAirpress"></span>
-                <span className="dayAferNinePmAirpress"></span>
                 <span className="dayAferNinePmAirpress"></span>
               </th>
             </tr>
@@ -1264,7 +1139,7 @@ function Forecast() {
                 </h4>
               </th>
 
-              <th className="weather">
+              <th className="forecast-weather">
                 <h2>
                   {" "}
                   {dayAftermidnightData.temperature} °C{" "}
@@ -1278,28 +1153,20 @@ function Forecast() {
                 <h4>{dayAftermidnightData.windSpeed} kph</h4>
 
                 <span className="dayAfterMidnightWind"></span>
-                <span className="dayAfterMidnightWind"></span>
-                <span className="dayAfterMidnightWind"></span>
               </th>
               <th className="waveHeight">
                 <h4>{waveHeight} m</h4>
 
-                <span className="waveHeightTmr"></span>
-                <span className="waveHeightTmr"></span>
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
                 <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
 
                 <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
-                <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{dayAftermidnightData.airpressure} hPa</h4>
 
-                <span className="dayAferMidnightAirpress"></span>
-                <span className="dayAferMidnightAirpress"></span>
                 <span className="dayAferMidnightAirpress"></span>
               </th>
             </tr>

@@ -270,7 +270,7 @@ class ApiComponent extends Component {
     // Determine general advisory based on counts
     switch (true) {
       case (unsafeCount > safeCount) && (unsafeCount > somewhatSafeCount):
-        return "Mostly Unsafe";
+        return "Mostly Safe";
       case( safeCount > unsafeCount) && (safeCount > somewhatSafeCount):
         return "Mostly Safe";
       case (somewhatSafeCount > safeCount) && (somewhatSafeCount > unsafeCount):
