@@ -1,6 +1,7 @@
 import React from 'react';
 import logobeach from '../../assets/images/logobeach.png';
 import { AlignJustify } from 'lucide-react';
+import { SquareMenu } from 'lucide-react';
 
 function Header() {
   return (

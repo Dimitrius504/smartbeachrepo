@@ -2,8 +2,6 @@
     background-image: url("../src/assets/images/background.png");
     background-size: cover;
     background-repeat: no-repeat;
-    max-width: 100%;
-    max-height: 100%;
   }
   
   .weather-conditions {
@@ -107,4 +105,19 @@
       margin-left: 180px;
     }
   }
+
+  @media screen and (max-width: 1366px) {
+    .footer {
+      background-color: #c4e9fff7;
+      position: relative;
+      /* margin-top: 0; */
+    }
+  }
   
+  @media screen and (max-width: 900px) {
+    .footer {
+      background-color: #c4e9fff7;
+      position: relative;
+      /* margin-top: 0; */
+    }
+  }

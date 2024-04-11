@@ -1,45 +1,61 @@
-/* Footer Styles */
 .footer {
     background-color: #c4e9fff7;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative; /* Ensure footer stays at the bottom of the page */
+    width: 100%; /* Ensure the footer spans the entire width */
+    padding: 20px 0; /* Add padding to the top and bottom */
 }
+
 .footer .card {
-    background-color: #a1dcff; 
-    border: none; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    border-radius: 15px; 
+    background-color: #a1dcff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
 
 .footer .card-title {
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 .footer .contact span {
     display: block;
-    color: #ffffff; 
+    color: #ffffff;
     font-size: 15px;
     font-weight: bold;
 }
 
 .footer .socials span {
     display: inline-block;
-    margin-right: 20px; 
+    margin-right: 20px;
     font-size: 20px;
 }
 
 ul.list {
     list-style-type: none;
-    padding: 0; 
-  }
-  
-  ul.list li {
-    margin-bottom: 3px; 
-  }
-  
-  ul.list li a {
-    text-decoration: none; 
-    color: #ffffff; 
-  }
-  
+    padding: 0;
+}
 
+ul.list li {
+    margin-bottom: 3px;
+}
+
+ul.list li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 1366px) {
+    .footer {
+      background-color: #c4e9fff7;
+      position: relative;
+      margin-top: 0;
+    }
+  }
   
+  @media screen and (max-width: 900px) {
+    .footer {
+      background-color: #c4e9fff7;
+      position: relative;
+      margin-top: 0;
+    }
+  }
