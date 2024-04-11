@@ -1,0 +1,45 @@
+/* Footer Styles */
+.footer {
+    background-color: #c4e9fff7;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+}
+.footer .card {
+    background-color: #a1dcff; 
+    border: none; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border-radius: 15px; 
+}
+
+.footer .card-title {
+    color: #ffffff; 
+}
+
+.footer .contact span {
+    display: block;
+    color: #ffffff; 
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.footer .socials span {
+    display: inline-block;
+    margin-right: 20px; 
+    font-size: 20px;
+}
+
+ul.list {
+    list-style-type: none;
+    padding: 0; 
+  }
+  
+  ul.list li {
+    margin-bottom: 3px; 
+  }
+  
+  ul.list li a {
+    text-decoration: none; 
+    color: #ffffff; 
+  }
+  
+
+  

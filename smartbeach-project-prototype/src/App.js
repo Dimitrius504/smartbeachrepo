@@ -2,10 +2,12 @@ import './App.css';
 import './Forecast.css';
 import './Live.css';
 import './Landing.css';
+import './Footer.css';
 //import Conditions from './components/Condition';
 //import WeatherComponent from './components/Weather';
 //import ApiComponent from './components/Kincardine';
 import Header from './views/shared/Header';
+import Footer from './views/shared/Footer';
 import Landing from './views/Landing';
 import Forecast from './views/Forecast';
 import Live from './views/Live'
@@ -29,6 +31,7 @@ function App() {
             <Route path="/live" element={<Live/>}/>
           </Routes>
         </BrowserRouter>
+        <Footer />
     </div>
   );
 }

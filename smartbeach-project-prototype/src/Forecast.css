@@ -18,7 +18,7 @@ table {
   border-radius: 30px;
   width: 100%;
   margin-bottom:50px;
-  box-shadow: 2.3px 4.6px 4.6px hsl(0deg 0% 0% / 0.43);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   table-layout: auto;
   border-collapse: auto;
 }

@@ -8,8 +8,6 @@ function Header() {
         <a className="navbar-brand" href="/landing">
           <img src={logobeach} alt="Logo" style={{ width: '100px', height: 'auto' }} />
         </a>
-        {/* Adjust the width value as needed to make the logo smaller */}
-        {/* You can adjust the alt text and className according to your needs */}
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
