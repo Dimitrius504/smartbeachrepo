@@ -1,8 +1,18 @@
 /* Footer Styles */
+html{
+    overflow-x:hidden;
+    height: 100%;
+  }
+
 .footer {
     background-color: #c4e9fff7;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width:100%;
+    padding: 0;
+    clear:both;
+    position: absolute;
 }
+
 .footer .card {
     background-color: #a1dcff; 
     border: none; 
@@ -40,6 +50,8 @@ ul.list {
     text-decoration: none; 
     color: #ffffff; 
   }
+
+
   
 
   
