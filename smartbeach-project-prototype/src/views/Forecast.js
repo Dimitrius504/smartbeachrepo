@@ -296,7 +296,7 @@ function Forecast() {
     );
   }
   return (
-    <main id="forecast-page">
+    <main id="forecast-page" className="body-bg">
       <div className="mobileHead">
         <h1 className="headTime">{currentDayOfWeek}</h1>
         <br />
