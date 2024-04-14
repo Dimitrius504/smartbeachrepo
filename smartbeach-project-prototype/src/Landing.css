@@ -9,6 +9,7 @@
     top: 425px;
     left: calc(99% - 350px);
     text-align: center;
+    font-family: 'gilroy-black';
   }
   
   .weather-conditions p {
@@ -71,7 +72,7 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       margin-bottom: 80px;
     }
-  
+
     .weather-conditions p {
       font-weight: bold;
       font-size: 1.5rem;
@@ -123,3 +124,10 @@
       /* margin-top: 0; */
     }
   }
+
+  @media screen and (min-width: 1126px) and (max-width: 1325px) {
+    div.image-container {
+      margin-left: 100px;
+    }
+  }
+  

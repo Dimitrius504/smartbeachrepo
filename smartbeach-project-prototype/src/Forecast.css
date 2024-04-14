@@ -9,8 +9,8 @@ header {
   height: 10vh;
 }
 
-body {
- 
+#forecast-page > div.mobileHead > h2 {
+  font-family: "Gilroy-Black";
 }
 
 .body-bg {
@@ -276,12 +276,17 @@ justify-content: center;
     margin: 50px 0px 50px 0px;
   }
   .card1{
-    background-color: #fbd85887;
+    background-color: #fbd858;
     width: 33vh;
     border-radius: 15px;
     box-shadow: 2.3px 4.6px 4.6px hsl(0deg 0% 0% / 0.43);
     margin:15px;
   }
+
+  #forecast-page > div.cards > div:nth-child(2) > h1.rating, #forecast-page > div.cards > div:nth-child(1) > h1.rating  {
+    text-shadow: 1px 1px 1px black;
+  }
+
   th {
     border-bottom:1px solid #ccc;
   }

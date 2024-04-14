@@ -9,29 +9,27 @@ header {
 .toggler-icon {
   background-color: none;
   border: none;
-
 }
 
 #root > div > nav > div > button {
   border: none;
   border-radius: 50px;
-  color: #f26322;
+  color: black;
 }
 
 .navbar-toggler:focus {
   text-decoration: none;
   outline: 0;
-  box-shadow: none!important;
+  box-shadow: none !important;
 }
 .custom-toggler {
   position: relative;
   border: none;
-
 }
 
 nav {
   flex: 2;
-  background-color: #aee1ff
+  background-color: #aee1ff;
 }
 
 .nav-links {
@@ -50,8 +48,8 @@ nav {
 }
 
 .custom-header {
-  background-color: #aee1ff; 
-  box-shadow: 0 10px 30px rgba(135, 135, 135, 0.3); 
+  background-color: #aee1ff;
+  box-shadow: 0 10px 30px rgba(135, 135, 135, 0.3);
 }
 
 .ml-auto-custom {
@@ -59,23 +57,20 @@ nav {
   /* padding-bottom: 20px; */
 }
 
-
 .navbar-toggler-icon {
-color: wheat;
-border: none;
-
+  color: wheat;
+  border: none;
 }
 
 .nav-link {
-color: #ffffff !important;
-font-size: 20px !important ;
-font-weight: bold !important;
-text-decoration: none;
-cursor: pointer;
-/* margin-top: 20px; */
-margin-right: 50px;
+  color: #ffffff !important;
+  font-size: 20px !important ;
+  font-weight: bold !important;
+  text-decoration: none;
+  cursor: pointer;
+  /* margin-top: 20px; */
+  margin-right: 50px;
 }
-
 
 .hamburger-menu {
   display: none;
@@ -88,3 +83,22 @@ margin-right: 50px;
   border: none;
 }
 
+@media screen and (max-width: 900px) { 
+
+    
+    .navbar-toggler {
+        z-index: 1;
+      }
+      
+      .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 0;
+        background-color: #aee1ff;
+        width: 100vw;
+        text-align: left;
+        padding-left: 2%;
+      }
+      
+}

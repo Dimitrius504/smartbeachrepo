@@ -7,7 +7,7 @@ function Header() {
   return (
     <nav className="navbar navbar-expand-lg custom-header">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/landing">
+        <a className="navbar-brand" href="/">
           <img src={logobeach} alt="Logo" style={{ width: '100px', height: 'auto' }} />
         </a>
         <button className="navbar-toggler d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
