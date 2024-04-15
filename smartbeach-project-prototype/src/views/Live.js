@@ -9,7 +9,7 @@ import '../Live.css';
 
 function Live() {
   return (
-    <main>
+    <main className="live">
       <div className="live-wrapper">
         <section id="live-hero">
           <h1>Turning current data into safe swimming</h1>
