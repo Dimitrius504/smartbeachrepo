@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
+require('dotenv').config();
+
 
 router.get("/", async (req, res) => {
   try {
-    const api = `https://api.openweathermap.org/data/2.5/weather?id=5992144&appid=acc94d3c8cb55a8424823537a253aabd&units=metric`;
-    const forecastApi = `https://api.openweathermap.org/data/2.5/forecast?id=5992144&appid=acc94d3c8cb55a8424823537a253aabd&units=metric`;
+    const api = `https://api.openweathermap.org/data/2.5/weather?id=5992144&appid=${process.env.API_KEY_NAME}&units=metric`;
+    const forecastApi = `https://api.openweathermap.org/data/2.5/forecast?id=5992144&appid=${process.env.API_KEY_NAME}&units=metric`;
 
     // Fetch current weather data
     fetch(api)

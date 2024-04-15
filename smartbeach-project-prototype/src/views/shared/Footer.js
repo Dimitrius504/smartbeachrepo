@@ -38,7 +38,7 @@ function Footer() {
                 <h2 className="card-title">Quick Links</h2>
                 <ul className="list">
                   <li>
-                    <a href="/landing">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>
                     <a href="/forecast">Forecast</a>

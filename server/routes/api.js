@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
+require('dotenv').config();
+
 router.get('/', async (req, res) => {
     try {
-        const kincardineApi = 'https://micbrucecounty22f.onrender.com/get-predict';
+        const kincardineApi = `${process.env.API_BASE_URL}`;
         
         // Fetch data from the API
         fetch(kincardineApi)

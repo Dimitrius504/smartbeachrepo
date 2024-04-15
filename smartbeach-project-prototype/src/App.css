@@ -35,3 +35,12 @@ button {
 #loading-content {
   align-items: center;
 }
+
+.nonExistent {
+  text-align: center;
+  height: 80vh;
+}
+
+.nonExistent > h1, .nonExistent> p {
+  margin-top: 10%;
+}
