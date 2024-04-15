@@ -18,7 +18,7 @@ function Landing() {
   const [weatherIcon, setWeatherIcon] = useState(null);
 
   useEffect(() => {
-    fetch("https://testlaunchrepo.onrender.com/weather")
+    fetch("https://smartbeach-api-server-data.onrender.com/weather")
       .then((res) => res.json())
       .then((data) => {
         setTemperature(Math.round(data.temperature));
