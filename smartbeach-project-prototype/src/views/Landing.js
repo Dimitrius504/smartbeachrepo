@@ -18,7 +18,7 @@ function Landing() {
   const [weatherIcon, setWeatherIcon] = useState(null);
 
   useEffect(() => {
-    fetch("/weather")
+    fetch("https://testlaunchrepo.onrender.com/weather")
       .then((res) => res.json())
       .then((data) => {
         setTemperature(Math.round(data.temperature));

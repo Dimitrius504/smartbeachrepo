@@ -55,7 +55,7 @@ function Forecast() {
   let [dayAfterNextDayOfWeek, setDayAfterNextDayOfWeek] = useState("");
 
   useEffect(() => {
-    fetch("/api")
+    fetch("https://testlaunchrepo.onrender.com/api")
       .then((res) => res.json())
       .then((data) => {
         setWaveHeight(Math.round(data.sea_surface_wave_significant_height));
@@ -70,7 +70,7 @@ function Forecast() {
   }, []);
 
   useEffect(() => {
-    fetch("/weather")
+    fetch("https://testlaunchrepo.onrender.com/weather")
       .then((res) => res.json())
       .then((data) => {
         console.log(data); // Log the data received from the API
