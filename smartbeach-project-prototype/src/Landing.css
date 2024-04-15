@@ -122,6 +122,23 @@
       background-color: #c4e9fff7;
       position: relative;
       /* margin-top: 0; */
+
+    }
+    .image-container iframe {
+      width: 90%;
+      left: 0;
+      margin-left: 0;
+    }
+    .image-container {
+      width: 100vw;
+      margin-left: 25px;
+  }
+    .live-hero {
+      display: inline-block;
+      justify-content: center;
+    }
+    .weather-conditions {
+      margin-left: 0;
     }
   }
 
