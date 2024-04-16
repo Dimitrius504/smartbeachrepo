@@ -69,9 +69,9 @@ export function getSeaSurfaceWaveHeight(sea_surface_wave_significant_height) {
     return "Loading...";
   }
   if (sea_surface_wave_significant_height > 3) {
-    return "Unsafe - Bad For Boaters";
+    return "Red - Unsafe - Bad For Boaters";
   } else if (sea_surface_wave_significant_height < 1) {
-    return "Safe - Good";
+    return "Green - Safe - Good";
   } else {
     return "Yellow - Somewhat Unsafe";
   }

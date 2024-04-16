@@ -2,7 +2,7 @@
   "name": "smartbeach-project-prototype",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://testlaunchsmartbeach.onrender.com/",
+  "proxy": "https://smartbeach-api-server-data.onrender.com/",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@popperjs/core": "^2.11.8",
