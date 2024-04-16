@@ -35,20 +35,20 @@ export function dayAfterTomorrowAirPressure(dayAfterTmrAirPressure) {
   }
 }
 
-
 export function getSeaWaterTemperature(sea_water_temperature_1) {
   let temperatureCelsius = sea_water_temperature_1 - 273.15;
 
-  if (temperatureCelsius < -250) {
+  if (temperatureCelsius === null) {
     return "...";
   } else if (temperatureCelsius < 10) {
-    return `${Math.round(temperatureCelsius)} °C`;
+    return "Unsafe";
   } else if (temperatureCelsius > 30) {
-    return `${Math.round(temperatureCelsius)} °C`;
+    return "Unsafe";
   } else {
-    return `${Math.round(temperatureCelsius)} °C`;
+    return "Safe";
   }
 }
+
 
 export function getAirTemperature(air_temperature) {
   const temperatureCelsius = air_temperature - 273.15;

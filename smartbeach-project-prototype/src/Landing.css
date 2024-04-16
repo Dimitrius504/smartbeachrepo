@@ -176,3 +176,11 @@
     margin-left: 130px;
   }
 }
+
+@media screen and (min-width: 1600px) {
+ 
+.image-container iframe {
+  margin-left: -300px;
+}
+
+}

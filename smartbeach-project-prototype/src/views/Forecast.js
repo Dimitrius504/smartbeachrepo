@@ -183,7 +183,7 @@ function Forecast() {
         });
       }
     };
-  
+
     setColorByCondition(tomorrowNineAMData, ".nineAmWindSpan");
     setColorByCondition(tomorrowTwelvePMData, ".twelveTmrWind");
     setColorByCondition(tomorrowThreePMData, ".tmrThreeWind");
@@ -216,15 +216,12 @@ function Forecast() {
       const condition = getSeaSurfaceWaveHeight(waveHeight);
       const color =
         condition === "Safe"
-          ? "#fbd858"
+          ? "#47d49a"
           : condition === "Unsafe"
           ? "#f26322"
-          : "#47d49a";
+          : "#f26322";
       document.querySelectorAll(".waveHeightTmr").forEach((span) => {
         span.style.backgroundColor = color;
-      });
-      document.querySelectorAll(".waveHeightTmr").forEach((span) => {
-        span.innerHTML = "";
       });
     } else {
       document.querySelectorAll(".waveHeightTmr").forEach((span) => {
@@ -234,7 +231,7 @@ function Forecast() {
   
     if (seaWaterTemp !== null) {
       const condition = getSeaWaterTemperature(seaWaterTemp);
-      const color = condition === "Safe" ? "#fbd858" : "#47d49a";
+      const color = condition === "Safe" ? "#47d49a" : "#f26322";
       document.querySelectorAll(".seaWaterTemp").forEach((span) => {
         span.style.backgroundColor = color;
       });
@@ -243,7 +240,7 @@ function Forecast() {
         span.style.backgroundColor = "grey";
       });
     }
-  }, [windSpeed, airpressure, waveHeight, seaWaterTemp, tomorrowNineAMData, tomorrowTwelvePMData, tomorrowThreePMData, tomorrowSixPMData, tomorrowNinePMData, tomorrowMidnightData, dayAfterNineAMData, dayAferTwelvePMData, dayAfterthreePMData, dayAftersixPMData, dayAfterninePMData, dayAftermidnightData]);  
+  }, [windSpeed, airpressure, waveHeight, seaWaterTemp, tomorrowNineAMData, tomorrowTwelvePMData, tomorrowThreePMData, tomorrowSixPMData, tomorrowNinePMData, tomorrowMidnightData, dayAfterNineAMData, dayAferTwelvePMData, dayAfterthreePMData, dayAftersixPMData, dayAfterninePMData, dayAftermidnightData]);
 
   const updateWeatherIcon = (description) => {
     let iconPath;
@@ -390,15 +387,15 @@ function Forecast() {
                 <h4>Water Tempeture</h4>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
                 <span className="seaWaterTemp"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
                 <span className="seaWaterTemp"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
                 <span className="seaWaterTemp"></span>
               </th>
             </tr>
@@ -450,15 +447,15 @@ function Forecast() {
                 <h4>Water Temperature</h4>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
                 <span className="seaWaterTemp"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
                 <span className="seaWaterTemp"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
                 <span className="seaWaterTemp"></span>
               </th>
             </tr>
@@ -559,7 +556,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -611,7 +608,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -663,7 +660,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -713,7 +710,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -763,7 +760,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -816,7 +813,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -904,7 +901,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -956,7 +953,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -1008,7 +1005,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -1058,7 +1055,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -1107,7 +1104,7 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
@@ -1160,13 +1157,12 @@ function Forecast() {
                 <span className="waveHeightTmr"></span>
               </th>
               <th className="waterTemp">
-                <h4>{getSeaWaterTemperature(seaWaterTemp)}</h4>
+                <h4>{seaWaterTemp} k</h4>
 
                 <span className="seaWaterTemp"></span>
               </th>
               <th className="airPressure">
                 <h4>{dayAftermidnightData.airpressure} hPa</h4>
-
                 <span className="dayAferMidnightAirpress"></span>
               </th>
             </tr>
